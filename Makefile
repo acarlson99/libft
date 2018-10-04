@@ -26,19 +26,18 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):
-	@echo "Compiling object files..."
+	@echo "Compiling libft object files..."
 	@$(CC) $(FLAGS) -I $(INCLUDES) -c $(LIB_CFILES)
-	@echo "Creating library..."
+	@echo "Linking libft object files..."
 	@ar rc $(NAME) $(LIB_OFILES)
 	@ranlib libft.a
-	@echo "Done. Have a nice day :)"
 
 clean:
-	@echo "Removing object files..."
+	@echo "Removing libft object files..."
 	@/bin/rm -f $(LIB_OFILES)
 
 fclean: clean
-	@echo "Removing library..."
+	@echo "Removing $(NAME)..."
 	@/bin/rm -f $(NAME)
 
 re: fclean all
