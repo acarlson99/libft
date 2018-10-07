@@ -10,6 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
+static void thing(void *content, size_t size)
+{
+  if (size == 0)
+    return;
+  else
+    free(content);
+}
+
 t_list          *ft_lstsort(t_list **lst, int (*cmp)(t_list *a, t_list *b))
 {
     t_list  *head;
