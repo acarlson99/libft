@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/19 14:25:41 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/19 16:43:45 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,70 @@
 # define ISPRINT(c) (c >= 040 && c <= 0176)
 # define TOUPPER(c) ((c >= 'a' && c <= 'z') ? c & '_' : c)
 # define TOLOWER(c) ((c >= 'A' && c <= 'Z') ? c | ' ' : c)
+
+/*
+** SET
+*/
+
+# define S_BLD		"\e[1m"
+# define S_DIM		"\e[2m"
+# define S_UND		"\e[4m"
+# define S_BLN		"\e[5m"
+# define S_HID		"\e[8m"
+# define S_INV		"\e[7m"
+# define S_RST_ALL	"\e[0m"
+# define S_RST_BLD	"\e[21m"
+# define S_RST_DIM	"\e[22m"
+# define S_RST_UND	"\e[24m"
+# define S_RST_BLN	"\e[25m"
+# define S_RST_INV	"\e[27m"
+# define S_RST_HID	"\e[28m"
+
+/*
+** FOREGROUND
+*/
+
+# define F_BLK		"\e[30m"
+# define F_RED		"\e[31m"
+# define F_GRN		"\e[32m"
+# define F_YLW		"\e[33m"
+# define F_BLU		"\e[34m"
+# define F_MGN		"\e[35m"
+# define F_CYN		"\e[36m"
+# define F_GRY		"\e[37m"
+# define F_WHT		"\e[97m"
+# define F_LGRY		"\e[37m"
+# define F_DGRY		"\e[90m"
+# define F_RED		"\e[91m"
+# define F_LGRN		"\e[92m"
+# define F_LYLW		"\e[93m"
+# define F_LBLU		"\e[94m"
+# define F_LMGN		"\e[95m"
+# define F_LCYN		"\e[96m"
+# define F_DFT		"\e[39m"
+
+/*
+** BACKGROUND
+*/
+
+# define B_BLK		"\e[40m"
+# define B_RED		"\e[41m"
+# define B_GRN		"\e[42m"
+# define B_YLW		"\e[43m"
+# define B_BLU		"\e[44m"
+# define B_MGN		"\e[45m"
+# define B_CYN		"\e[46m"
+# define B_GRY		"\e[47m"
+# define B_LGRY		"\e[47m"
+# define B_DGRY		"\e[100m"
+# define B_LRED		"\e[101m"
+# define B_LGRN		"\e[102m"
+# define B_LYLW		"\e[103m"
+# define B_LBLU		"\e[104m"
+# define B_LMGN		"\e[105m"
+# define B_LCYN		"\e[106m"
+# define B_WHT		"\e[107m"
+# define B_DFT		"\e[49m"
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
