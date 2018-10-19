@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/06 17:50:00 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/19 14:25:41 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,14 @@
 # define MIN(a,b) (a < b) ? a : b
 # define MAX(a,b) (a > b) ? a : b
 # define ABS(x) (x < 0) ? -x : x
+
+# define ISALPHA(c) ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+# define ISDIGIT(c) (c >= '0' && c <= '9')
+# define ISALNUM(c) (ISALPHA(c) || ISDIGIT(c))
+# define ISASCII(c) (c >= 0 && c <= 0177)
+# define ISPRINT(c) (c >= 040 && c <= 0176)
+# define TOUPPER(c) ((c >= 'a' && c <= 'z') ? c & '_' : c)
+# define TOLOWER(c) ((c >= 'A' && c <= 'Z') ? c | ' ' : c)
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
@@ -91,12 +99,12 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-t_list			*ft_lstsort(t_list **lst, int (*cmp)(t_list *a, t_list *b));
 
 int				ft_isprime(unsigned long n);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_itoabase(int n, int base);
 int				ft_atoibase(const char *str, int base);
 char			*ft_strrev(const char *s);
+int				ft_isin(char c, const char *str);
 
 #endif
