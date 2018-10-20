@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 11:46:03 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 12:41:51 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 
 # include <unistd.h>
 
+# define RET_COND(cond,ret) if(cond) return (ret)
 # define NULL_CHECK(x) if(x) return (NULL)
 # define MIN(a,b) (a < b) ? a : b
 # define MAX(a,b) (a > b) ? a : b
@@ -165,12 +166,12 @@ void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 int				ft_isprime(unsigned long n);
-char			*ft_strndup(const char *s1, size_t n);
-char			*ft_itoabase(int n, int base);
 int				ft_atoibase(const char *str, int base);
-char			*ft_strrev(const char *s);
 int				ft_isin(char c, const char *str);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
+char			*ft_strndup(const char *s1, size_t n);
+char			*ft_itoabase(int n, int base);
+char			*ft_strrev(const char *s);
 
 #endif

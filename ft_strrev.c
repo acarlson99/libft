@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/25 18:54:41 by acarlson          #+#    #+#             */
-/*   Updated: 2018/09/25 19:20:32 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 12:40:06 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_strrev(const char *s)
 {
-	int		s_len;
+	size_t	s_len;
 	char	*new;
 	char	*ptr;
 
