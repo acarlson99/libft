@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/19 16:43:45 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 11:17:57 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 ** SET
 */
 
-# define S_BLD		"\e[1m"
+# define S_BOL		"\e[1m"
 # define S_DIM		"\e[2m"
 # define S_UND		"\e[4m"
 # define S_BLN		"\e[5m"
@@ -64,7 +64,7 @@
 # define F_WHT		"\e[97m"
 # define F_LGRY		"\e[37m"
 # define F_DGRY		"\e[90m"
-# define F_RED		"\e[91m"
+# define F_LRED		"\e[91m"
 # define F_LGRN		"\e[92m"
 # define F_LYLW		"\e[93m"
 # define F_LBLU		"\e[94m"
