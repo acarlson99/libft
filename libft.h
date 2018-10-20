@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 12:46:59 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 15:53:14 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,6 +174,7 @@ typedef enum	e_bool
 int				ft_isprime(unsigned long n);
 int				ft_atoibase(const char *str, int base);
 int				ft_isin(char c, const char *str);
+int				ft_reduce(int *arr, size_t size, int (*f)(int a, int b));
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
 char			*ft_strndup(const char *s1, size_t n);
