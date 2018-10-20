@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   ft_wordlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/17 13:08:09 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 11:40:35 by acarlson         ###   ########.fr       */
+/*   Created: 2018/10/20 11:41:48 by acarlson          #+#    #+#             */
+/*   Updated: 2018/10/20 12:00:43 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strsub(char const *s, unsigned int start, size_t len)
+size_t	ft_wordlen(const char *s, char c)
 {
-	char	*new;
-	size_t	i;
+	size_t len;
 
-	if (!s)
-		return (NULL);
-	NULL_CHECK(!(new = (char *)malloc((len + 1) * sizeof(char))));
-	i = 0;
-	while (s[start + i] && i < len)
+	len = 0;
+	while (*s == c)
+		s++;
+	while (*s && *s != c)
 	{
-		new[i] = s[i + start];
-		i++;
+		len++;
+		s++;
 	}
-	new[i] = '\0';
-	return (new);
+	return (len);
 }

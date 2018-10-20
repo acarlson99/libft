@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/16 20:28:42 by acarlson          #+#    #+#             */
-/*   Updated: 2018/09/16 20:47:01 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 11:39:01 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,4 @@ void		*ft_memalloc(size_t size)
 	NULL_CHECK(!(thing = (void *)malloc(size)));
 	ft_bzero(thing, size);
 	return (thing);
-	return (NULL);
 }

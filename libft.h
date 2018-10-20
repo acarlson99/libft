@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 11:17:57 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 11:46:03 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -170,5 +170,7 @@ char			*ft_itoabase(int n, int base);
 int				ft_atoibase(const char *str, int base);
 char			*ft_strrev(const char *s);
 int				ft_isin(char c, const char *str);
+size_t			ft_wordlen(const char *s, char c);
+size_t			ft_wordnum(const char *s, char c);
 
 #endif
