@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 18:58:11 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 19:19:28 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -175,11 +175,14 @@ int				ft_isprime(unsigned long n);
 int				ft_atoibase(const char *str, int base);
 int				ft_isin(char c, const char *str);
 int				ft_reduce(int *arr, size_t size, int (*f)(int a, int b));
+int				ft_floor(float n);
+int				ft_ceil(float n);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_itoabase(int n, int base);
 char			*ft_strrev(const char *s);
+void			ft_putflt(float n, size_t precision);
 void			*ft_memrealloc(void *ptr, size_t size);
 
 #endif
