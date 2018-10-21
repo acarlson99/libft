@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 15:53:14 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 16:54:48 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -180,5 +180,6 @@ size_t			ft_wordnum(const char *s, char c);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_itoabase(int n, int base);
 char			*ft_strrev(const char *s);
+void			*ft_memrealloc(void *ptr, size_t size);
 
 #endif
