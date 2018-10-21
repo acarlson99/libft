@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 15:12:05 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 15:53:39 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 18:59:03 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int		ft_reduce(int *arr, size_t size, int (*f)(int a, int b))
 	int		start;
 	size_t	i;
 
-	RET_COND(size <= 0, 0);
+	RET_IF(size <= 0, 0);
 	start = arr[0];
 	i = 1;
 	while (i < size)

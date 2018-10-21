@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 16:54:48 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 18:58:11 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 
 # include <unistd.h>
 
-# define RET_COND(cond,ret) if(cond) return (ret)
+# define RET_IF(cond,ret) if(cond) return (ret)
 # define NULL_CHECK(x) if(x) return (NULL)
 # define MIN(a,b) (a < b) ? a : b
 # define MAX(a,b) (a > b) ? a : b
