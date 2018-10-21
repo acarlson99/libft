@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 19:19:28 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/20 20:16:27 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,65 +36,65 @@
 ** SET
 */
 
-# define S_BOL		"\e[1m"
-# define S_DIM		"\e[2m"
-# define S_UND		"\e[4m"
-# define S_BLN		"\e[5m"
-# define S_HID		"\e[8m"
-# define S_INV		"\e[7m"
-# define S_RST_ALL	"\e[0m"
-# define S_RST_BLD	"\e[21m"
-# define S_RST_DIM	"\e[22m"
-# define S_RST_UND	"\e[24m"
-# define S_RST_BLN	"\e[25m"
-# define S_RST_INV	"\e[27m"
-# define S_RST_HID	"\e[28m"
+# define S_BOL		"\033[1m"
+# define S_DIM		"\033[2m"
+# define S_UND		"\033[4m"
+# define S_BLN		"\033[5m"
+# define S_HID		"\033[8m"
+# define S_INV		"\033[7m"
+# define S_RST_ALL	"\033[0m"
+# define S_RST_BLD	"\033[21m"
+# define S_RST_DIM	"\033[22m"
+# define S_RST_UND	"\033[24m"
+# define S_RST_BLN	"\033[25m"
+# define S_RST_INV	"\033[27m"
+# define S_RST_HID	"\033[28m"
 
 /*
 ** FOREGROUND
 */
 
-# define F_BLK		"\e[30m"
-# define F_RED		"\e[31m"
-# define F_GRN		"\e[32m"
-# define F_YLW		"\e[33m"
-# define F_BLU		"\e[34m"
-# define F_MGN		"\e[35m"
-# define F_CYN		"\e[36m"
-# define F_GRY		"\e[37m"
-# define F_WHT		"\e[97m"
-# define F_LGRY		"\e[37m"
-# define F_DGRY		"\e[90m"
-# define F_LRED		"\e[91m"
-# define F_LGRN		"\e[92m"
-# define F_LYLW		"\e[93m"
-# define F_LBLU		"\e[94m"
-# define F_LMGN		"\e[95m"
-# define F_LCYN		"\e[96m"
-# define F_DFT		"\e[39m"
+# define F_BLK		"\033[30m"
+# define F_RED		"\033[31m"
+# define F_GRN		"\033[32m"
+# define F_YLW		"\033[33m"
+# define F_BLU		"\033[34m"
+# define F_MGN		"\033[35m"
+# define F_CYN		"\033[36m"
+# define F_GRY		"\033[37m"
+# define F_WHT		"\033[97m"
+# define F_LGRY		"\033[37m"
+# define F_DGRY		"\033[90m"
+# define F_LRED		"\033[91m"
+# define F_LGRN		"\033[92m"
+# define F_LYLW		"\033[93m"
+# define F_LBLU		"\033[94m"
+# define F_LMGN		"\033[95m"
+# define F_LCYN		"\033[96m"
+# define F_DFT		"\033[39m"
 
 /*
 ** BACKGROUND
 */
 
-# define B_BLK		"\e[40m"
-# define B_RED		"\e[41m"
-# define B_GRN		"\e[42m"
-# define B_YLW		"\e[43m"
-# define B_BLU		"\e[44m"
-# define B_MGN		"\e[45m"
-# define B_CYN		"\e[46m"
-# define B_GRY		"\e[47m"
-# define B_LGRY		"\e[47m"
-# define B_DGRY		"\e[100m"
-# define B_LRED		"\e[101m"
-# define B_LGRN		"\e[102m"
-# define B_LYLW		"\e[103m"
-# define B_LBLU		"\e[104m"
-# define B_LMGN		"\e[105m"
-# define B_LCYN		"\e[106m"
-# define B_WHT		"\e[107m"
-# define B_DFT		"\e[49m"
+# define B_BLK		"\033[40m"
+# define B_RED		"\033[41m"
+# define B_GRN		"\033[42m"
+# define B_YLW		"\033[43m"
+# define B_BLU		"\033[44m"
+# define B_MGN		"\033[45m"
+# define B_CYN		"\033[46m"
+# define B_GRY		"\033[47m"
+# define B_LGRY		"\033[47m"
+# define B_DGRY		"\033[100m"
+# define B_LRED		"\033[101m"
+# define B_LGRN		"\033[102m"
+# define B_LYLW		"\033[103m"
+# define B_LBLU		"\033[104m"
+# define B_LMGN		"\033[105m"
+# define B_LCYN		"\033[106m"
+# define B_WHT		"\033[107m"
+# define B_DFT		"\033[49m"
 
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
