@@ -50,3 +50,10 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+# Mac junk
+.DS_Store
+._.DS_STORE
+._*
+
+main.c
