@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/22 11:37:35 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/22 16:39:02 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,10 @@
 # define ISPRINT(c) (c >= 040 && c <= 0176)
 # define TOUPPER(c) ((c >= 'a' && c <= 'z') ? c & '_' : c)
 # define TOLOWER(c) ((c >= 'A' && c <= 'Z') ? c | ' ' : c)
+
+/*
+** Colors
+*/
 
 /*
 ** SET
@@ -97,6 +101,10 @@
 # define B_WHT		"\033[107m"
 # define B_DFT		"\033[49m"
 
+/*
+** Part one
+*/
+
 void			*ft_memset(void *b, int c, size_t len);
 void			ft_bzero(void *s, size_t n);
 void			*ft_memcpy(void *dst, const void *src, size_t n);
@@ -127,6 +135,10 @@ int				ft_isprint(int c);
 int				ft_toupper(int c);
 int				ft_tolower(int c);
 
+/*
+** Part two
+*/
+
 void			*ft_memalloc(size_t size);
 void			ft_memdel(void **ap);
 char			*ft_strnew(size_t size);
@@ -152,6 +164,10 @@ void			ft_putstr_fd(char const *s, int fd);
 void			ft_putendl_fd(char const *s, int fd);
 void			ft_putnbr_fd(int n, int fd);
 
+/*
+** Bonus part
+*/
+
 typedef struct	s_list
 {
 	void			*content;
@@ -165,6 +181,10 @@ void			ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void			ft_lstadd(t_list **alst, t_list *new);
 void			ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+/*
+** My functions
+*/
 
 int				ft_isprime(unsigned long n);
 int				ft_atoibase(const char *str, int base);

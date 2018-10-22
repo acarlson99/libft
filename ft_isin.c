@@ -6,9 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:11:34 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/19 14:14:54 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/22 16:43:20 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Returns 1 if c is in str.  0 if it is not.  Does not return 1 for \0
+*/
 
 int		ft_isin(char c, const char *str)
 {
