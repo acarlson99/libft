@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/23 10:58:17 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 11:34:04 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <string.h>
+
 # include <unistd.h>
-# include <limits.h>
 
 # define RET_IF(cond,ret) if(cond) return (ret)
 # define RET_NONE(cond) if(cond) return ;
@@ -32,6 +32,14 @@
 # define ISPRINT(c) (c >= 040 && c <= 0176)
 # define TOUPPER(c) ((c >= 'a' && c <= 'z') ? c & '_' : c)
 # define TOLOWER(c) ((c >= 'A' && c <= 'Z') ? c | ' ' : c)
+
+# define FT_UINT_MAX ((unsigned int)-1)
+# define FT_INT_MAX ((int)(FT_UINT_MAX / 2))
+# define FT_INT_MIN ((int)(FT_INT_MAX + 1))
+
+# define FT_ULONG_MAX ((unsigned long)-1)
+# define FT_LONG_MAX ((long)(FT_ULONG_MAX / 2))
+# define FT_LONG_MIN ((long)(FT_LONG_MAX + 1))
 
 /*
 ** Colors
