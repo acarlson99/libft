@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/23 11:56:25 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 15:26:04 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,20 @@
 
 # include <unistd.h>
 
+/*
+** Handy macros
+*/
+
 # define RET_IF(cond,ret) if(cond) return (ret)
 # define RET_NONE(cond) if(cond) return ;
 # define NULL_CHECK(x) if(x) return (NULL)
 # define MIN(a,b) (a < b) ? a : b
 # define MAX(a,b) (a > b) ? a : b
 # define ABS(x) (x < 0) ? -x : x
+
+/*
+** Stupid macros
+*/
 
 # define ISALPHA(c) ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
 # define ISDIGIT(c) (c >= '0' && c <= '9')
@@ -32,6 +40,14 @@
 # define ISPRINT(c) (c >= 040 && c <= 0176)
 # define TOUPPER(c) ((c >= 'a' && c <= 'z') ? c & '_' : c)
 # define TOLOWER(c) ((c >= 'A' && c <= 'Z') ? c | ' ' : c)
+
+/*
+** limits stuff because we can't use limits.h for whatever reason
+*/
+
+# define FT_UCHAR_MAX 255
+# define FT_SCHAR_MAX 127
+# define FT_SCHAR_MIN -128
 
 # define FT_UINT_MAX (((unsigned int)0) - 1)
 # define FT_INT_MAX (FT_UINT_MAX / 2)
@@ -164,7 +180,7 @@ char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
 char			*ft_itoa(int n);
 void			ft_putchar(char c);
-void			ft_putstr(char *s);
+void			ft_putstr(char const *s);
 void			ft_putendl(char const *s);
 void			ft_putnbr(int n);
 void			ft_putchar_fd(char c, int fd);
@@ -200,6 +216,7 @@ int				ft_isin(char c, const char *str);
 int				ft_reduce(int *arr, size_t size, int (*f)(int a, int b));
 int				ft_floor(float n);
 int				ft_ceil(float n);
+double			ft_sqrt(double n);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
 char			*ft_strndup(const char *s1, size_t n);
@@ -207,5 +224,6 @@ char			*ft_itoabase(int n, int base);
 char			*ft_strrev(const char *s);
 void			ft_putflt(float n, size_t precision);
 void			*ft_memrealloc(void *ptr, size_t size);
+
 
 #endif
