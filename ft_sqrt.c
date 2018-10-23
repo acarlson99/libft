@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 14:50:16 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/23 15:42:46 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 15:46:13 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ double		ft_sqrt(double n)
 
 	old = n;
 	new = 0;
-	while (old != 0)
+	while (old > 0)
 	{
 		new = 0.5 * (old + (n / old));
 		if (ft_abs(new - old) / old < 0.0001)
