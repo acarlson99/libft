@@ -6,11 +6,11 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/23 15:41:30 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/23 15:41:37 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 15:49:01 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-double ft_abs(double x)
+double		ft_abs(double x)
 {
-    return  x < 0.0 ? -x : x;
+	return (x < 0.0 ? -x : x);
 }
