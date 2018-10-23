@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/23 15:26:04 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 15:42:27 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -216,6 +216,7 @@ int				ft_isin(char c, const char *str);
 int				ft_reduce(int *arr, size_t size, int (*f)(int a, int b));
 int				ft_floor(float n);
 int				ft_ceil(float n);
+double			ft_abs(double n);
 double			ft_sqrt(double n);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
