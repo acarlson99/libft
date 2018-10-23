@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/23 15:48:47 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 15:53:46 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -210,7 +210,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** My functions
 */
 
-int				ft_isprime(unsigned long n);
+int				ft_isprime(size_t n);
 int				ft_atoibase(const char *str, int base);
 int				ft_isin(char c, const char *str);
 int				ft_reduce(int *arr, size_t size, int (*f)(int a, int b));
