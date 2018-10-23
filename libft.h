@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/22 16:39:02 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 10:58:17 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 # include <stdlib.h>
 # include <string.h>
-
 # include <unistd.h>
+# include <limits.h>
 
 # define RET_IF(cond,ret) if(cond) return (ret)
 # define RET_NONE(cond) if(cond) return ;

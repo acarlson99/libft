@@ -6,11 +6,11 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 12:39:09 by acarlson          #+#    #+#             */
-/*   Updated: 2018/09/30 16:23:26 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 10:58:33 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>
+#include "libft.h"
 
 static int	check(unsigned long n, int sign)
 {
