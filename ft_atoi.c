@@ -6,18 +6,17 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 12:39:09 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/23 11:38:20 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/23 11:46:37 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <limits.h>		// TODO: this is not allowed
 #include "libft.h"
 
 static int	check(unsigned long n, int sign)
 {
-	if (sign == 1 && n >= (unsigned long)LONG_MAX)
+	if (sign == 1 && n >= (unsigned long)FT_LONG_MAX)
 		return (-1);
-	else if (sign == -1 && n >= (unsigned long)LONG_MIN)
+	else if (sign == -1 && n >= (unsigned long)FT_LONG_MIN)
 		return (0);
 	else
 		return (n * sign);
