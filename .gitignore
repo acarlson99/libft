@@ -56,4 +56,7 @@ dkms.conf
 ._.DS_STORE
 ._*
 
+# Python stuff
+__pycache__/
+
 main.c
