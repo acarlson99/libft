@@ -58,5 +58,6 @@ dkms.conf
 
 # Python stuff
 __pycache__/
+*.py
 
 main.c
