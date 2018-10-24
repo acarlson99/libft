@@ -1,33 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_numlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 16:07:46 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 15:37:48 by acarlson         ###   ########.fr       */
+/*   Created: 2018/10/24 15:00:55 by acarlson          #+#    #+#             */
+/*   Updated: 2018/10/24 15:11:06 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+/*
+** Returns number of digits in some number n in some base
+*/
+
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+size_t	ft_numlen(int n, int base)
 {
-	unsigned char	*dptr;
-	unsigned char	*sptr;
+	int count;
 
-	dptr = (unsigned char *)dst;
-	sptr = (unsigned char *)src;
-	if (dst == src)
-		return (dst);
-	if (dst < src)
-		while (len--)
-			*dptr++ = *sptr++;
-	else
+	count = 0;
+	if (n < 0)
+		count++;
+	else if (n == 0)
+		return (1);
+	while (n != 0)
 	{
-		while (len--)
-			*(dptr + len) = *(sptr + len);
+		count++;
+		n /= base;
 	}
-	return (dst);
+	return (count);
 }

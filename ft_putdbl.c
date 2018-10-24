@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putdbl.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/16 16:07:46 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 15:37:48 by acarlson         ###   ########.fr       */
+/*   Created: 2018/10/24 16:47:40 by acarlson          #+#    #+#             */
+/*   Updated: 2018/10/24 16:50:56 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void		ft_putdbl(double n, size_t precision)
 {
-	unsigned char	*dptr;
-	unsigned char	*sptr;
+	int		n1;
+	size_t	p;
+	size_t	len;
 
-	dptr = (unsigned char *)dst;
-	sptr = (unsigned char *)src;
-	if (dst == src)
-		return (dst);
-	if (dst < src)
-		while (len--)
-			*dptr++ = *sptr++;
-	else
+	p = precision;
+	n1 = ft_floor(n);
+	ft_putnbr(n1);
+	n -= (double)n1;
+	n = n < 0 ? -n : n;
+	RET_NONE(p == 0);
+	while ((double)ft_floor(n) != n && p > 0)
 	{
-		while (len--)
-			*(dptr + len) = *(sptr + len);
+		n *= 10;
+		p--;
 	}
-	return (dst);
+	ft_putchar('.');
+	n1 = ft_floor(n);
+	len = ft_numlen(n1, 10);
+	ft_putnbr(n1);
 }

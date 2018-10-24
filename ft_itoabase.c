@@ -6,28 +6,11 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/24 18:11:48 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 12:21:23 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 15:09:49 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	get_int_len(int n, int base)
-{
-	int count;
-
-	count = 0;
-	if (n < 0)
-		count++;
-	else if (n == 0)
-		return (1);
-	while (n != 0)
-	{
-		count++;
-		n /= base;
-	}
-	return (count);
-}
 
 char		*ft_itoabase(int n, int base)
 {
@@ -35,7 +18,7 @@ char		*ft_itoabase(int n, int base)
 	int		is_neg;
 	size_t	i;
 
-	i = get_int_len(n, base);
+	i = ft_numlen(n, base);
 	NULL_CHECK(!(new = (char *)malloc((i + 1) * sizeof(char))));
 	new[i] = '\0';
 	if (n == 0 && (is_neg = 0))
