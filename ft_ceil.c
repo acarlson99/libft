@@ -6,13 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 18:13:56 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 19:40:06 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 16:51:51 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_ceil(float n)
+int		ft_ceil(double n)
 {
 	float fl;
 

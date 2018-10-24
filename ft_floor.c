@@ -6,13 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 18:13:49 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/20 19:13:26 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 16:52:02 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_floor(float n)
+int		ft_floor(double n)
 {
 	return (((int)n < 0) ? n - 1 : n);
 }
