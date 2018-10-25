@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/25 13:26:13 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/25 13:58:46 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -238,7 +238,9 @@ char			*ft_strndup(const char *s1, size_t n);
 char			*ft_itoabase(int n, int base);
 char			*ft_strrev(const char *s);
 void			ft_putflt(float n, size_t precision);
+void			ft_putflt_fd(float n, size_t precision, int fd);
 void			ft_putdbl(double n, size_t precision);
+void			ft_putdbl_fd(double n, size_t precision, int fd);
 void			*ft_memrealloc(void *ptr, size_t size);
 
 #endif

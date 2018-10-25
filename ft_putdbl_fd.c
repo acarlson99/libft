@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putdbl.c                                        :+:      :+:    :+:   */
+/*   ft_putdbl_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/24 16:47:40 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/25 14:17:48 by acarlson         ###   ########.fr       */
+/*   Created: 2018/10/25 14:22:16 by acarlson          #+#    #+#             */
+/*   Updated: 2018/10/25 14:22:50 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_putdbl(double n, size_t precision)
+void		ft_putdbl_fd(double n, size_t precision, int fd)
 {
 	int		n1;
 	size_t	p;
@@ -20,7 +20,7 @@ void		ft_putdbl(double n, size_t precision)
 
 	p = precision;
 	n1 = ft_floor(n);
-	ft_putnbr(n1);
+	ft_putnbr_fd(n1, fd);
 	n -= (double)n1;
 	n = n < 0 ? -n : n;
 	RET_NONE(p == 0);
@@ -29,10 +29,10 @@ void		ft_putdbl(double n, size_t precision)
 		n *= 10;
 		p--;
 	}
-	ft_putchar('.');
+	ft_putchar_fd('.', fd);
 	n1 = ft_floor(n);
 	len = ft_numlen(n1, 10);
 	while (len++ < precision)
-		ft_putchar('0');
-	ft_putnbr(n1);
+		ft_putchar_fd('0', fd);
+	ft_putnbr_fd(n1, fd);
 }

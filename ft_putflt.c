@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/20 17:27:54 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 19:45:26 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/25 14:17:55 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void		ft_putflt(float n, size_t precision)
 	n -= (float)n1;
 	n = n < 0 ? -n : n;
 	RET_NONE(p == 0);
-	while ((float)ft_floor(n) != n && p > 0)
+	while (p > 0)
 	{
 		n *= 10;
 		p--;
