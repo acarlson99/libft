@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 20:50:28 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/25 13:26:13 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@
 # define ISPRINT(c) (c >= 040 && c <= 0176)
 # define TOUPPER(c) ((c >= 'a' && c <= 'z') ? c & '_' : c)
 # define TOLOWER(c) ((c >= 'A' && c <= 'Z') ? c | ' ' : c)
+
+# define TODIGIT(c) ((c) - '0')
+# define TOCHAR(n) ((n) + '0')
 
 /*
 ** limits stuff because we can't use limits.h for whatever reason
@@ -226,6 +229,7 @@ int				ft_floor(double n);
 int				ft_ceil(double n);
 double			ft_abs(double n);
 double			ft_sqrt(double n);
+double			ft_round(double n, size_t p);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
 size_t			ft_numlen(int n, int base);
