@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 19:38:55 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 20:50:28 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -229,7 +229,7 @@ double			ft_sqrt(double n);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
 size_t			ft_numlen(int n, int base);
-size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t			ft_strlcpy(char *dst, const char *src, size_t len);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_itoabase(int n, int base);
 char			*ft_strrev(const char *s);

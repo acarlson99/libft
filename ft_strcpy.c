@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/11 14:46:44 by acarlson          #+#    #+#             */
-/*   Updated: 2018/09/12 14:40:15 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 21:08:14 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ char	*ft_strcpy(char *dst, const char *src)
 		dst[i] = src[i];
 		i++;
 	}
-	if (src[i] == '\0')
-		dst[i] = '\0';
+	dst[i] = '\0';
 	return (dst);
 }
