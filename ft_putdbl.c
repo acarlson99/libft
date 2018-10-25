@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/24 16:47:40 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 16:50:56 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 20:11:06 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,7 @@ void		ft_putdbl(double n, size_t precision)
 	ft_putchar('.');
 	n1 = ft_floor(n);
 	len = ft_numlen(n1, 10);
+	while (len++ < precision)
+		ft_putchar('0');
 	ft_putnbr(n1);
 }

@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 19:36:08 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 19:38:55 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,7 @@
 # define BKG_WHT "\033[107m"
 # define BKG_DFT "\033[49m"
 
-# define INCLUDE "\033[0m"
+# define NC "\033[0m"
 
 /*
 ** Part one
