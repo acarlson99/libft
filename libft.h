@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 16:53:43 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 17:00:25 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,21 +65,21 @@
 ** TYPOGRAPHICAL EMPHASIS
 */
 
-# define	E(n)		S_ ## n
+# define	TE(n)		TE_ ## n
 
-# define	S_BOL		"\033[1m"
-# define	S_DIM		"\033[2m"
-# define	S_UND		"\033[4m"
-# define	S_BLN		"\033[5m"
-# define	S_HID		"\033[8m"
-# define	S_INV		"\033[7m"
-# define	S_RST_ALL	"\033[0m"
-# define	S_RST_BLD	"\033[21m"
-# define	S_RST_DIM	"\033[22m"
-# define	S_RST_UND	"\033[24m"
-# define	S_RST_BLN	"\033[25m"
-# define	S_RST_INV	"\033[27m"
-# define	S_RST_HID	"\033[28m"
+# define	TE_BOL		"\033[1m"
+# define	TE_DIM		"\033[2m"
+# define	TE_UND		"\033[4m"
+# define	TE_BLN		"\033[5m"
+# define	TE_HID		"\033[8m"
+# define	TE_INV		"\033[7m"
+# define	TE_RST_ALL	"\033[0m"
+# define	TE_RST_BLD	"\033[21m"
+# define	TE_RST_DIM	"\033[22m"
+# define	TE_RST_UND	"\033[24m"
+# define	TE_RST_BLN	"\033[25m"
+# define	TE_RST_INV	"\033[27m"
+# define	TE_RST_HID	"\033[28m"
 
 /*
 ** FOREGROUND
