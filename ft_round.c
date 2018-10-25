@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/25 12:34:03 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/25 13:49:34 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/25 14:35:50 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 double		ft_round(double n, size_t p)
 {
-	size_t shift;
-	int fl;
+	size_t	shift;
+	int		fl;
 
 	shift = 0;
 	while (shift <= p)
