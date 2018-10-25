@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/24 17:00:25 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/24 19:36:08 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,73 +65,73 @@
 ** TYPOGRAPHICAL EMPHASIS
 */
 
-# define	TE(n)		TE_ ## n
+# define TE(n) TE_ ## n
 
-# define	TE_BOL		"\033[1m"
-# define	TE_DIM		"\033[2m"
-# define	TE_UND		"\033[4m"
-# define	TE_BLN		"\033[5m"
-# define	TE_HID		"\033[8m"
-# define	TE_INV		"\033[7m"
-# define	TE_RST_ALL	"\033[0m"
-# define	TE_RST_BLD	"\033[21m"
-# define	TE_RST_DIM	"\033[22m"
-# define	TE_RST_UND	"\033[24m"
-# define	TE_RST_BLN	"\033[25m"
-# define	TE_RST_INV	"\033[27m"
-# define	TE_RST_HID	"\033[28m"
+# define TE_BOL "\033[1m"
+# define TE_DIM "\033[2m"
+# define TE_UND "\033[4m"
+# define TE_BLN "\033[5m"
+# define TE_HID "\033[8m"
+# define TE_INV "\033[7m"
+# define TE_RST_ALL "\033[0m"
+# define TE_RST_BLD "\033[21m"
+# define TE_RST_DIM "\033[22m"
+# define TE_RST_UND "\033[24m"
+# define TE_RST_BLN "\033[25m"
+# define TE_RST_INV "\033[27m"
+# define TE_RST_HID "\033[28m"
 
 /*
 ** FOREGROUND
 */
 
-# define	FG(n)		FG_ ## n
+# define FG(n) FG_ ## n
 
-# define	FG_BLK		"\033[30m"
-# define	FG_RED		"\033[31m"
-# define	FG_GRN		"\033[32m"
-# define	FG_YLW		"\033[33m"
-# define	FG_BLU		"\033[34m"
-# define	FG_MGN		"\033[35m"
-# define	FG_CYN		"\033[36m"
-# define	FG_GRY		"\033[37m"
-# define	FG_WHT		"\033[97m"
-# define	FG_LGRY		"\033[37m"
-# define	FG_DGRY		"\033[90m"
-# define	FG_LRED		"\033[91m"
-# define	FG_LGRN		"\033[92m"
-# define	FG_LYLW		"\033[93m"
-# define	FG_LBLU		"\033[94m"
-# define	FG_LMGN		"\033[95m"
-# define	FG_LCYN		"\033[96m"
-# define	FG_DFT		"\033[39m"
+# define FG_BLK "\033[30m"
+# define FG_RED "\033[31m"
+# define FG_GRN "\033[32m"
+# define FG_YLW "\033[33m"
+# define FG_BLU "\033[34m"
+# define FG_MGN "\033[35m"
+# define FG_CYN "\033[36m"
+# define FG_GRY "\033[37m"
+# define FG_WHT "\033[97m"
+# define FG_LGRY "\033[37m"
+# define FG_DGRY "\033[90m"
+# define FG_LRED "\033[91m"
+# define FG_LGRN "\033[92m"
+# define FG_LYLW "\033[93m"
+# define FG_LBLU "\033[94m"
+# define FG_LMGN "\033[95m"
+# define FG_LCYN "\033[96m"
+# define FG_DFT "\033[39m"
 
 /*
 ** BACKGROUND
 */
 
-# define	BKG(n)		BKG_ ## n
+# define BKG(n) BKG_ ## n
 
-# define	BKG_BLK		"\033[40m"
-# define	BKG_RED		"\033[41m"
-# define	BKG_GRN		"\033[42m"
-# define	BKG_YLW		"\033[43m"
-# define	BKG_BLU		"\033[44m"
-# define	BKG_MGN		"\033[45m"
-# define	BKG_CYN		"\033[46m"
-# define	BKG_GRY		"\033[47m"
-# define	BKG_LGRY	"\033[47m"
-# define	BKG_DGRY	"\033[100m"
-# define	BKG_LRED	"\033[101m"
-# define	BKG_LGRN	"\033[102m"
-# define	BKG_LYLW	"\033[103m"
-# define	BKG_LBLU	"\033[104m"
-# define	BKG_LMGN	"\033[105m"
-# define	BKG_LCYN	"\033[106m"
-# define	BKG_WHT		"\033[107m"
-# define	BKG_DFT		"\033[49m"
+# define BKG_BLK "\033[40m"
+# define BKG_RED "\033[41m"
+# define BKG_GRN "\033[42m"
+# define BKG_YLW "\033[43m"
+# define BKG_BLU "\033[44m"
+# define BKG_MGN "\033[45m"
+# define BKG_CYN "\033[46m"
+# define BKG_GRY "\033[47m"
+# define BKG_LGRY "\033[47m"
+# define BKG_DGRY "\033[100m"
+# define BKG_LRED "\033[101m"
+# define BKG_LGRN "\033[102m"
+# define BKG_LYLW "\033[103m"
+# define BKG_LBLU "\033[104m"
+# define BKG_LMGN "\033[105m"
+# define BKG_LCYN "\033[106m"
+# define BKG_WHT "\033[107m"
+# define BKG_DFT "\033[49m"
 
-# define	NC			"\033[0m"
+# define INCLUDE "\033[0m"
 
 /*
 ** Part one
@@ -229,6 +229,7 @@ double			ft_sqrt(double n);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
 size_t			ft_numlen(int n, int base);
+size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_itoabase(int n, int base);
 char			*ft_strrev(const char *s);
