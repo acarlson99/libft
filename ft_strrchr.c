@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/15 20:13:04 by acarlson          #+#    #+#             */
-/*   Updated: 2018/09/15 20:45:21 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/28 16:40:53 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,17 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	char *s_cpy;
+	char *cptr;
 
 	s_cpy = (char *)s;
+	cptr = NULL;
 	while (*s_cpy)
-		s_cpy++;
-	while (s_cpy >= s)
 	{
 		if (*s_cpy == c)
-			return (s_cpy);
-		s_cpy--;
+			cptr = s_cpy;
+		s_cpy++;
 	}
-	return (NULL);
+	if (*s_cpy == c)
+		return (s_cpy);
+	return (cptr);
 }

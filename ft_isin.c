@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/19 14:11:34 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/22 16:43:20 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/28 16:45:44 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,5 @@ int		ft_isin(char c, const char *str)
 			return (1);
 		str++;
 	}
-	return (0);
+	return (*str == c);
 }
