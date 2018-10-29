@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/28 17:10:56 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/28 17:41:48 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,12 @@
 # define MIN(a,b) (a < b) ? a : b
 # define MAX(a,b) (a > b) ? a : b
 # define ABS(x) (x < 0) ? -x : x
+
+/*
+** # define ABS(x) (x ^ (x >> 31)) - (x >> 31)
+** # define MAX(a,b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
+** # define MIN(a,b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))
+*/
 
 # define ISWHITE(c) (c == ' ' || c == '\n' || c == '\t')
 # define ISWHITE2(c) (c == '\r' || c == '\v' || c == '\f' || ISWHITE(c))
