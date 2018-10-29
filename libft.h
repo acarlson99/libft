@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/25 13:58:46 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/28 17:10:56 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,12 @@
 # define MAX(a,b) (a > b) ? a : b
 # define ABS(x) (x < 0) ? -x : x
 
+# define ISWHITE(c) (c == ' ' || c == '\n' || c == '\t')
+# define ISWHITE2(c) (c == '\r' || c == '\v' || c == '\f' || ISWHITE(c))
+
+# define TODIGIT(c) ((c) - '0')
+# define TOCHAR(n) ((n) + '0')
+
 /*
 ** Stupid macros
 */
@@ -40,9 +46,6 @@
 # define ISPRINT(c) (c >= 040 && c <= 0176)
 # define TOUPPER(c) ((c >= 'a' && c <= 'z') ? c & '_' : c)
 # define TOLOWER(c) ((c >= 'A' && c <= 'Z') ? c | ' ' : c)
-
-# define TODIGIT(c) ((c) - '0')
-# define TOCHAR(n) ((n) + '0')
 
 /*
 ** limits stuff because we can't use limits.h for whatever reason
@@ -242,5 +245,6 @@ void			ft_putflt_fd(float n, size_t precision, int fd);
 void			ft_putdbl(double n, size_t precision);
 void			ft_putdbl_fd(double n, size_t precision, int fd);
 void			*ft_memrealloc(void *ptr, size_t size);
+void			ft_swap(int *a, int *b);
 
 #endif
