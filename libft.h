@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/28 21:31:18 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/29 23:06:57 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,11 @@
 ** limits stuff because we can't use limits.h for whatever reason
 */
 
+# define FT_CHAR_BIT 8
+
 # define FT_UCHAR_MAX 255
 # define FT_SCHAR_MAX 127
-# define FT_SCHAR_MIN -128
+# define FT_SCHAR_MIN (-128)
 
 # define FT_UINT_MAX (((unsigned int)0) - 1)
 # define FT_INT_MAX (FT_UINT_MAX / 2)
@@ -67,6 +69,14 @@
 # define FT_ULONG_MAX (((unsigned long)0) - 1)
 # define FT_LONG_MAX (FT_ULONG_MAX / 2)
 # define FT_LONG_MIN (FT_LONG_MAX + 1)
+
+# define FT_SIZE_T_MAX (((size_t)0) - 1)
+
+# ifdef __LP64__
+#  define FT_LONG_BIT 64
+# else
+#  define FT_LONG_BIT 32
+# endif
 
 /*
 ** Colors
