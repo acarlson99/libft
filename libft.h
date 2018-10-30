@@ -22,17 +22,17 @@
 ** Handy macros
 */
 
-# define RET_IF(cond,ret) if(cond) return (ret)
-# define RET_NONE(cond) if(cond) return ;
-# define NULL_CHECK(x) if(x) return (NULL)
+# define RET_IF(cond, ret) if (cond) return (ret)
+# define RET_NONE(cond) if (cond) return ;
+# define NULL_CHECK(x) if (x) return (NULL)
 
-# define MIN(a,b) (a < b) ? a : b
-# define MAX(a,b) (a > b) ? a : b
+# define MIN(a, b) (a < b) ? a : b
+# define MAX(a, b) (a > b) ? a : b
 # define ABS(x) (x < 0) ? -x : x
 
 # define ABS_I(x) (x ^ (x >> 31)) - (x >> 31)
-# define MAX_I(a,b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
-# define MIN_I(a,b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))
+# define MAX_I(a, b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
+# define MIN_I(a, b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))
 
 # define ISWHITE(c) (c == ' ' || c == '\n' || c == '\t')
 # define ISWHITE2(c) (c == '\r' || c == '\v' || c == '\f' || ISWHITE(c))
