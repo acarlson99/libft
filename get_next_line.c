@@ -6,13 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 16:03:49 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/28 21:20:12 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/10/31 22:43:41 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
-static void			loop(int fd, char **line, char buf[BUFF_SIZE], int nl)
+static void			gnl_loop(int fd, char **line, char buf[BUFF_SIZE], int nl)
 {
 	ssize_t			rret;
 	char			*tmp1;
@@ -36,7 +36,7 @@ static void			loop(int fd, char **line, char buf[BUFF_SIZE], int nl)
 	}
 }
 
-static size_t		find_i(char buf[BUFF_SIZE], size_t *i)
+static size_t		gnl_find_i(char buf[BUFF_SIZE], size_t *i)
 {
 	*i = 0;
 	while (*i < BUFF_SIZE && buf[*i] == 0)
@@ -49,7 +49,7 @@ static size_t		find_i(char buf[BUFF_SIZE], size_t *i)
 	return (0);
 }
 
-static size_t		find_len(char buf[BUFF_SIZE], size_t i)
+static size_t		gnl_find_len(char buf[BUFF_SIZE], size_t i)
 {
 	size_t len;
 
@@ -61,21 +61,21 @@ static size_t		find_len(char buf[BUFF_SIZE], size_t i)
 
 int					get_next_line(const int fd, char **line)
 {
-	static char		buf[4096][BUFF_SIZE];
+	static char		buf[FT_FD_MAX][BUFF_SIZE];
 	size_t			i;
 	size_t			len;
 	ssize_t			rret;
 	int				nl;
 
-	RET_IF(fd < 0 || !(line) || BUFF_SIZE < 1, -1);
+	RET_IF(fd < 0 || fd >= FT_FD_MAX || !(line) || BUFF_SIZE < 1, -1);
 	rret = BUFF_SIZE;
 	nl = 0;
-	if (find_i(buf[fd], &i))
+	if (gnl_find_i(buf[fd], &i))
 	{
 		RET_IF((rret = read(fd, buf[fd], BUFF_SIZE)) == -1, -1);
 		RET_IF(rret == 0, 0);
 	}
-	len = find_len(buf[fd], i);
+	len = gnl_find_len(buf[fd], i);
 	*line = ft_strndup(buf[fd] + i, len);
 	if (buf[fd][i + len] == '\n')
 	{
@@ -83,6 +83,6 @@ int					get_next_line(const int fd, char **line)
 		nl = 1;
 	}
 	ft_bzero(buf[fd] + i, len);
-	loop(fd, line, buf[fd], nl);
+	gnl_loop(fd, line, buf[fd], nl);
 	return (1);
 }
