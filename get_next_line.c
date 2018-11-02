@@ -6,11 +6,11 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 16:03:49 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/31 22:43:41 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/01 17:50:23 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "libft.h"
 
 static void			gnl_loop(int fd, char **line, char buf[BUFF_SIZE], int nl)
 {

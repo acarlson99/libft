@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/31 22:44:03 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/01 17:49:57 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # define BUFF_SIZE 4096
 
 # define RET_IF(cond, ret) if (cond) return (ret)
-# define RET_NONE(cond) if (cond) return ;
+# define RET_NONE(cond) if (cond) return
 # define NULL_CHECK(x) if (x) return (NULL)
 
 # define MIN(a, b) (a < b) ? a : b
