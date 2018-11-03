@@ -61,4 +61,4 @@ __pycache__/
 *.py
 
 # Because it's a library, silly Billy.  You don't need a main
-main.c
+*main.c

@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 16:58:40 by acarlson          #+#    #+#             */
-/*   Updated: 2018/10/30 00:01:33 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/02 17:29:38 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@
 # define STRLEN_MAX_CHECK 8
 #endif
 
-#define	LONGPTR_MASK (sizeof(long) - 1)
+#define LONGPTR_MASK (sizeof(long) - 1)
 
 size_t		ft_strlen(const char *str)
 {
-	const char *p;
-	const unsigned long *lp;
-	int i;
+	const char				*p;
+	const unsigned long		*lp;
+	int						i;
 
 	p = str;
 	while ((uintptr_t)p & LONGPTR_MASK)
