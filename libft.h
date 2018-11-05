@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/01 17:49:57 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/04 18:02:55 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@
 # define MAX_I(a, b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
 # define MIN_I(a, b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))
 
+# define ISBLANK(c) (c == ' ' || c == '\t')
 # define ISWHITE(c) (c == ' ' || c == '\n' || c == '\t')
 # define ISWHITE2(c) (c == '\r' || c == '\v' || c == '\f' || ISWHITE(c))
 
@@ -270,5 +271,9 @@ void			ft_putdbl(double n, size_t precision);
 void			ft_putdbl_fd(double n, size_t precision, int fd);
 void			*ft_memrealloc(void *ptr, size_t size);
 void			ft_swap(int *a, int *b);
+
+int				ft_strchri(const char *s, int c);
+void			ft_lstrev(t_list **alst);
+void			ft_lstadd_tail(t_list **alst, t_list *new);
 
 #endif
