@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/04 18:02:55 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/05 17:21:05 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -262,6 +262,8 @@ size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
 size_t			ft_numlen(int n, int base);
 size_t			ft_strlcpy(char *dst, const char *src, size_t len);
+size_t			ft_strspn(const char *s, const char *charset);
+size_t			ft_strcspn(const char *s, const char *charset);
 char			*ft_strndup(const char *s1, size_t n);
 char			*ft_itoabase(int n, int base);
 char			*ft_strrev(const char *s);
@@ -271,6 +273,14 @@ void			ft_putdbl(double n, size_t precision);
 void			ft_putdbl_fd(double n, size_t precision, int fd);
 void			*ft_memrealloc(void *ptr, size_t size);
 void			ft_swap(int *a, int *b);
+
+int				ft_putchar_fd_2(char c, int fd);
+int				ft_putdbl_fd_2(double n, size_t precision, int fd);
+int				ft_putendl_fd_2(char const *s, int fd);
+int				ft_putflt_fd_2(float n, size_t precision, int fd);
+int				ft_putnbr_base_2(int n, int base);
+int				ft_putnbr_fd_2(int n, int fd);
+int				ft_putstr_fd_2(char const *s, int fd);
 
 int				ft_strchri(const char *s, int c);
 void			ft_lstrev(t_list **alst);
