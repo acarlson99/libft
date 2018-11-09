@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/08 17:44:03 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/09 12:18:06 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,7 +266,8 @@ double			ft_sqrt(double n);
 double			ft_round(double n, size_t p);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
-size_t			ft_numlen(int n, int base);
+size_t			ft_signed_numlen(ssize_t n, int base);
+size_t			ft_unsigned_numlen(size_t n, int base);
 size_t			ft_strlcpy(char *dst, const char *src, size_t len);
 size_t			ft_strspn(const char *s, const char *charset);
 size_t			ft_strcspn(const char *s, const char *charset);
@@ -287,6 +288,8 @@ int				ft_putflt_fd_2(float n, size_t precision, int fd);
 int				ft_putnbr_base_2(int n, int base);
 int				ft_putnbr_fd_2(int n, int fd);
 int				ft_putstr_fd_2(char const *s, int fd);
+int				ft_putnstr_fd(char *s, size_t n, int fd);
+int				ft_putcstr_fd(char *s, int c, int fd);
 
 int				ft_strchri(const char *s, int c);
 void			ft_lstrev(t_list **alst);

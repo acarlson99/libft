@@ -6,7 +6,7 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 14:45:59 by acarlson          #+#    #+#              #
-#    Updated: 2018/11/05 17:02:35 by acarlson         ###   ########.fr        #
+#    Updated: 2018/11/09 12:17:25 by acarlson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,10 +28,10 @@ FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr ft_memcmp\
 		\
 		ft_isprime ft_strndup ft_itoabase ft_atoibase ft_strrev ft_isin ft_wordnum\
 		ft_wordlen ft_reduce ft_memrealloc ft_floor ft_ceil ft_putflt ft_putflt_fd\
-		ft_putdbl ft_putdbl_fd ft_abs ft_sqrt ft_numlen ft_strlcpy ft_round ft_swap\
-		ft_strchri ft_lstrev ft_lstadd_tail ft_strspn ft_strcspn\
-		ft_putchar_fd_2 ft_putdbl_fd_2 ft_putendl_fd_2 ft_putflt_fd_2 ft_putnbr_base_2\
-		ft_putnbr_fd_2 ft_putstr_fd_2
+		ft_putdbl ft_putdbl_fd ft_abs ft_sqrt ft_signed_numlen ft_unsigned_numlen\
+		ft_strlcpy ft_round ft_swap\ ft_strchri ft_lstrev ft_lstadd_tail ft_strspn\
+		ft_strcspn ft_putchar_fd_2 ft_putdbl_fd_2 ft_putendl_fd_2 ft_putflt_fd_2\
+		ft_putnbr_base_2 ft_putnbr_fd_2 ft_putstr_fd_2 ft_putnstr_fd ft_putcstr_fd
 LIB_CFILES = $(addsuffix .c, $(FILES))
 LIB_OFILES = $(addsuffix .o, $(FILES))
 NAME = libft.a
