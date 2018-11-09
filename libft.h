@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/05 17:21:05 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/08 17:44:03 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,16 +65,22 @@
 # define FT_UCHAR_MAX 255
 # define FT_SCHAR_MAX 127
 # define FT_SCHAR_MIN (-128)
+# define FT_CHAR_MAX (FT_UCHAR_MAX / (unsigned char)2)
+# define FT_CHAR_MIN ((int)(char)(FT_SCHAR_MAX + 1))
 
-# define FT_UINT_MAX (((unsigned int)0) - 1)
+# define FT_USHRT_MAX ((int)(unsigned short)(-1))
+# define FT_SHRT_MAX (FT_USHRT_MAX / (unsigned short)2)
+# define FT_SHRT_MIN ((int)(short)(FT_SHRT_MAX + 1))
+
+# define FT_UINT_MAX ((unsigned int)(-1))
 # define FT_INT_MAX (FT_UINT_MAX / 2)
 # define FT_INT_MIN (FT_INT_MAX + 1)
 
-# define FT_ULONG_MAX (((unsigned long)0) - 1)
+# define FT_ULONG_MAX ((unsigned long)(-1))
 # define FT_LONG_MAX (FT_ULONG_MAX / 2)
 # define FT_LONG_MIN (FT_LONG_MAX + 1)
 
-# define FT_SIZE_T_MAX (((size_t)0) - 1)
+# define FT_SIZE_T_MAX ((size_t)(-1))
 
 # ifdef __LP64__
 #  define FT_LONG_BIT 64
