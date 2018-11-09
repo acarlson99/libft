@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 12:59:02 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/09 13:00:50 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/09 13:14:36 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_ssize_ttoabase(ssize_t n, int base)
 	ssize_t		is_neg;
 	ssize_t		i;
 
-	i = ft_signed_numlen(n, base);
+	i = ft_snumlen(n, base);
 	NULL_CHECK(!(new = (char *)malloc((i + 1) * sizeof(char))));
 	new[i] = '\0';
 	is_neg = 0;

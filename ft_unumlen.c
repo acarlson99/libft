@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_size_tlen.c                                     :+:      :+:    :+:   */
+/*   ft_unsigned_numlen.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 12:11:56 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/09 12:15:12 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/09 13:10:33 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/09 13:11:07 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Returns number of digits in some number n in some base
 */
 
-size_t		ft_unsigned_numlen(size_t n, int base)
+size_t		ft_unumlen(size_t n, int base)
 {
 	size_t		count;
 

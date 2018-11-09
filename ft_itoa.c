@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/19 12:21:17 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/09 12:18:37 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/09 13:14:07 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char		*ft_itoa(int n)
 	int		is_neg;
 	size_t	i;
 
-	i = ft_signed_numlen(n, 10);
+	i = ft_snumlen(n, 10);
 	NULL_CHECK(!(new = (char *)malloc((i + 1) * sizeof(char))));
 	new[i] = '\0';
 	is_neg = 0;

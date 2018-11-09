@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/09 13:01:17 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/09 13:11:31 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,8 +266,8 @@ double			ft_sqrt(double n);
 double			ft_round(double n, size_t p);
 size_t			ft_wordlen(const char *s, char c);
 size_t			ft_wordnum(const char *s, char c);
-size_t			ft_signed_numlen(ssize_t n, int base);
-size_t			ft_unsigned_numlen(size_t n, int base);
+size_t			ft_snumlen(ssize_t n, int base);
+size_t			ft_unumlen(size_t n, int base);
 size_t			ft_strlcpy(char *dst, const char *src, size_t len);
 size_t			ft_strspn(const char *s, const char *charset);
 size_t			ft_strcspn(const char *s, const char *charset);
@@ -293,7 +293,7 @@ int				ft_putcstr_fd(char *s, int c, int fd);
 
 size_t			ft_atosize_tbase(const char *str, int base);
 char			*ft_size_ttoabase(size_t n, int base);
-char		*ft_ssize_ttoabase(ssize_t n, int base);
+char			*ft_ssize_ttoabase(ssize_t n, int base);
 
 int				ft_strchri(const char *s, int c);
 void			ft_lstrev(t_list **alst);
