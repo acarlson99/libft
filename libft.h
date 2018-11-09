@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/09 12:18:06 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/09 13:01:17 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -290,6 +290,10 @@ int				ft_putnbr_fd_2(int n, int fd);
 int				ft_putstr_fd_2(char const *s, int fd);
 int				ft_putnstr_fd(char *s, size_t n, int fd);
 int				ft_putcstr_fd(char *s, int c, int fd);
+
+size_t			ft_atosize_tbase(const char *str, int base);
+char			*ft_size_ttoabase(size_t n, int base);
+char		*ft_ssize_ttoabase(ssize_t n, int base);
 
 int				ft_strchri(const char *s, int c);
 void			ft_lstrev(t_list **alst);
