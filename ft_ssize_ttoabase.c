@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/09 12:59:02 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/09 13:14:36 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/11 14:59:24 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char		*ft_ssize_ttoabase(ssize_t n, int base)
 {
-	char	*new;
+	char		*new;
 	ssize_t		is_neg;
 	ssize_t		i;
 
