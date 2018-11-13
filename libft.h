@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/09 13:11:31 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/12 22:37:42 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,17 @@
 # define FT_LONG_MAX (FT_ULONG_MAX / 2)
 # define FT_LONG_MIN (FT_LONG_MAX + 1)
 
+# define FT_ULLONG_MAX ((unsigned long long)(-1))
+# define FT_LLONG_MAX (FT_ULLONG_MAX / 2)
+# define FT_LLONG_MIN (FT_LLONG_MAX + 1)
+
+# define FT_UINTMAX_MAX ((uintmax_t)(-1))
+# define FT_INTMAX_MAX (FT_UINTMAX_MAX / 2)
+# define FT_INTMAX_MIN (FT_INTMAX_MAX + 1)
+
 # define FT_SIZE_T_MAX ((size_t)(-1))
+# define FT_SSIZE_T_MAX (FT_SIZE_T_MAX / 2)
+# define FT_SSIZE_T_MIN (FT_SSIZE_T_MAX + 1)
 
 # ifdef __LP64__
 #  define FT_LONG_BIT 64
