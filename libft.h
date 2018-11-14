@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/12 22:37:42 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/13 16:30:07 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@
 # define RET_IF(cond, ret) if (cond) return (ret)
 # define RET_NONE(cond) if (cond) return
 # define NULL_CHECK(x) if (x) return (NULL)
+# define DO_IF(cond, do_me) if (cond) do_me
+# define DO_ALL(cond, ...) if (cond) __VA_ARGS__
 
 # define MIN(a, b) (a < b) ? a : b
 # define MAX(a, b) (a > b) ? a : b
