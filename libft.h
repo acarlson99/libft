@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/13 20:18:59 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/13 20:23:33 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <stdlib.h>
 # include <string.h>
-
 # include <unistd.h>
 
 /*
@@ -306,7 +305,7 @@ int				ft_putcstr_fd(char *s, int c, int fd);
 int				ft_unicode_len(wchar_t c);
 int				ft_putwchar_fd(wchar_t c, int fd);
 int				ft_putwstr_fd(wchar_t *str, int fd);
-size_t			ft_wstrlen(wchar_t *s)
+size_t			ft_wstrlen(wchar_t *s);
 
 size_t			ft_atosize_tbase(const char *str, int base);
 char			*ft_size_ttoabase(size_t n, int base);
