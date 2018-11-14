@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 20:47:19 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/13 22:07:53 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/13 23:00:47 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,13 @@
 
 int		ft_wcharlen(wchar_t wc)
 {
-	RET_IF(wc < 0x80, 1);
-	RET_IF(wc < 0x800, 2);
-	RET_IF(wc < 0x10000, 3);
-	RET_IF(wc < 0x110000, 4);
+	if (wc <= 0x7F)
+		return (1);
+	else if (wc <= 0x7FF)
+		return (2);
+	else if (wc <= 0xFFFF)
+		return (3);
+	else if (wc <= 0x10FFFF)
+		return (4);
 	return (0);
 }

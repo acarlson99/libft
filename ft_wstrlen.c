@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putwstr.c                                       :+:      :+:    :+:   */
+/*   ft_wstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/09 13:08:34 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/13 22:59:50 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/13 22:59:17 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/13 22:59:33 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_putwstr_fd(wchar_t *ws, int fd)
+size_t	ft_wstrlen(wchar_t *ws)
 {
-	size_t len;
-	size_t tmp;
-	size_t ret;
+	size_t	i;
 
-	len = 0;
-	ret = ft_wstrlen(ws);
+	i = 0;
 	while (*ws != L'\0')
 	{
-		ft_putwchar_fd(*ws, fd);
-		tmp = ft_wcharlen(*ws);
-		len += tmp;
+		i += ft_wcharlen(*ws);
 		ws++;
-		if (tmp == 0)
-			return (ret);
-		if (len >= ret)
-			return (ret);
 	}
-	return (ret);
+	return (i);
 }
