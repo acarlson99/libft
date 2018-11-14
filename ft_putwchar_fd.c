@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/13 20:11:32 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/13 20:31:26 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/13 20:49:07 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int		ft_putwchar_fd(wchar_t wc, int fd)
 {
 	int		uni_len;
 
-	uni_len = ft_unicode_len(wc);
+	uni_len = ft_wcharlen(wc);
 	if (uni_len == 1)
 		return (ft_putchar_fd_2(wc, fd));
 	else if (uni_len == 2)
