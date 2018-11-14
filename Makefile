@@ -6,7 +6,7 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 14:45:59 by acarlson          #+#    #+#              #
-#    Updated: 2018/11/09 13:13:51 by acarlson         ###   ########.fr        #
+#    Updated: 2018/11/13 20:13:03 by acarlson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr ft_memcmp\
 		ft_lstadd_tail ft_strspn ft_strcspn ft_putchar_fd_2 ft_putdbl_fd_2\
 		ft_putendl_fd_2 ft_putflt_fd_2 ft_putnbr_base_2 ft_putnbr_fd_2\
 		ft_putstr_fd_2 ft_putnstr_fd ft_putcstr_fd ft_atosize_tbase\
-		ft_size_ttoabase ft_ssize_ttoabase
+		ft_size_ttoabase ft_ssize_ttoabase ft_unicode_len ft_putwchar_fd
 LIB_CFILES = $(addsuffix .c, $(FILES))
 LIB_OFILES = $(addsuffix .o, $(FILES))
 NAME = libft.a
