@@ -66,4 +66,5 @@ CMakeLists.txt
 cmake-build-debug
 
 # Because it's a library, silly Billy.  You don't need a main
+/.obj/
 *main.c
