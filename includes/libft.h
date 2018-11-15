@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/13 23:20:39 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 12:37:51 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
+# include <ft_printf.h>
 
 /*
 ** Handy macros
@@ -261,6 +262,9 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 */
 
 int				get_next_line(const int fd, char **line);
+
+int				ft_printf(char *fmt, ...);
+int				ft_vdprintf(int fd, const char *format, va_list args_list);
 
 /*
 ** My functions

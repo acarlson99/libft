@@ -1,0 +1,108 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   print_str_char.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2018/11/13 15:15:27 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/14 15:28:37 by acarlson         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <ft_printf.h>
+
+int					print_wide_char(t_info info, wchar_t wc)
+{
+	int		count;
+	int		padding;
+
+	count = 0;
+	info.len = ft_wcharlen(wc);
+	padding = info.min_field_width;
+	if (IS_NEG_FIELD(info.options))
+		count += ft_putwchar_fd(wc, g_printf_fd);
+	while (padding-- > info.len)
+		count += ft_putwchar_fd(IS_ZERO(info.options) ? '0' : ' ', PF_FD);
+	if (!(IS_NEG_FIELD(info.options)))
+		count += ft_putwchar_fd(wc, PF_FD);
+	return (count);
+}
+
+int					print_skinny_char(t_info info, int c)
+{
+	int		count;
+	int		padding;
+
+	count = 0;
+	info.len = 1;
+	padding = info.min_field_width;
+	if (IS_NEG_FIELD(info.options))
+		count += ft_putchar_fd_2(c, g_printf_fd);
+	while (padding-- > info.len)
+		count += ft_putchar_fd_2(IS_ZERO(info.options) ? '0' : ' ', PF_FD);
+	if (!(IS_NEG_FIELD(info.options)))
+		count += ft_putchar_fd_2(c, PF_FD);
+	return (count);
+}
+
+int					print_char(t_info info, va_list args_list)
+{
+	if (IS_LONG(info.mod) || ft_isin('C', info.str))
+		return (print_wide_char(info, va_arg(args_list, wchar_t)));
+	else
+		return (print_skinny_char(info, va_arg(args_list, int)));
+}
+
+int					print_wchar_str(t_info info, va_list args_list)
+{
+	wchar_t	*str;
+	int		count;
+	size_t	padding;
+
+	count = 0;
+	str = va_arg(args_list, wchar_t *);
+	if (str == NULL)
+		return (write(PF_FD, "(null)", 6));
+	count = 0;
+	info.len_str = str ? ft_wstrlen(str) : 6;
+	if (info.prec_spec && (size_t)PREC < info.len_str)
+		info.len_str = (size_t)PREC;
+	padding = MFW;
+	if (IS_NEG_FIELD(info.options))
+		count += ft_putnwstr_fd(str, info.prec_spec\
+								? info.precision : info.len_str, g_printf_fd);
+	while (padding-- > info.len_str)
+		count += ft_putchar_fd_2(IS_ZERO(info.options) ? '0' : ' ', PF_FD);
+	if (!(IS_NEG_FIELD(info.options)))
+		count += ft_putnwstr_fd(str, info.prec_spec\
+								? info.precision : info.len_str, g_printf_fd);
+	return (count);
+}
+
+int					print_string(t_info info, va_list args_list)
+{
+	char	*str;
+	int		count;
+	size_t	padding;
+
+	if (IS_LONG(info.mod) || ft_isin('S', info.str))
+		return (print_wchar_str(info, args_list));
+	str = va_arg(args_list, char *);
+	if (str == NULL)
+		str = "(null)";
+	count = 0;
+	info.len_str = ft_strlen(str);
+	if (info.prec_spec && (size_t)PREC < info.len_str)
+		info.len_str = (size_t)PREC;
+	padding = MFW;
+	if (IS_NEG_FIELD(info.options))
+		count += ft_putnstr_fd(str, info.prec_spec\
+								? info.precision : info.len_str, g_printf_fd);
+	while (padding-- > info.len_str)
+		count += ft_putchar_fd_2(IS_ZERO(info.options) ? '0' : ' ', PF_FD);
+	if (!(IS_NEG_FIELD(info.options)))
+		count += ft_putnstr_fd(str, info.prec_spec\
+								? info.precision : info.len_str, g_printf_fd);
+	return (count);
+}

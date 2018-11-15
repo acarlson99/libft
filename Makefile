@@ -6,13 +6,14 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 14:45:59 by acarlson          #+#    #+#              #
-#    Updated: 2018/11/13 23:18:46 by acarlson         ###   ########.fr        #
+#    Updated: 2018/11/15 12:54:09 by acarlson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
 FLAGS = -Wall -Wextra -Werror
-FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr ft_memcmp\
+INCLUDES = includes/
+LIB_FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr ft_memcmp\
 		ft_strlen ft_strdup ft_strcpy ft_strncpy ft_strcat ft_strncat\
 		ft_strlcat ft_strchr ft_strrchr ft_strstr ft_strnstr ft_strcmp\
 		ft_strncmp ft_atoi ft_isalpha ft_isdigit ft_isalnum ft_isascii\
@@ -37,27 +38,66 @@ FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr ft_memcmp\
 		ft_putstr_fd_2 ft_putnstr_fd ft_putcstr_fd ft_atosize_tbase\
 		ft_size_ttoabase ft_ssize_ttoabase ft_wcharlen ft_putwchar_fd\
 		ft_wstrlen ft_putwstr ft_putnwstr
-LIB_CFILES = $(addsuffix .c, $(FILES))
-LIB_OFILES = $(addsuffix .o, $(FILES))
-NAME = libft.a
+LIB_CFILES = $(addsuffix .c, $(LIB_FILES))
+LIB_OFILES = $(addsuffix .o, $(LIB_FILES))
+LIB_NAME = libft.a
+
+PF_SRCS = ft_printf_srcs/
+PF_FILES = ft_printf disp print_str_char print_int print_unsigned print_oct\
+		print_hex print_pointer print_percent print_padding parse_input\
+		find_options print_bin find_colors
+PF_CFILES = $(addprefix $(PF_SRCS), $(addsuffix .c, $(PF_FILES)))
+PF_OFILES = $(addsuffix .o, $(PF_FILES))
 
 .PHONY: all clean fclean re
 
-all: $(NAME)
-
-$(NAME):
-	@echo "Compiling $(NAME) object files..."
-	@$(CC) $(FLAGS) -c $(LIB_CFILES)
-	@echo "Linking $(NAME) object files..."
-	@ar rc $(NAME) $(LIB_OFILES)
-	@ranlib libft.a
+all: $(LIB_NAME) printf
 
 clean:
-	@echo "Removing $(NAME) object files..."
+	@echo "Removing $(LIB_NAME) object files"
 	@/bin/rm -f $(LIB_OFILES)
+	@echo "Removing printf object files"
+	@/bin/rm -f $(PF_OFILES)
 
 fclean: clean
-	@echo "Removing $(NAME)..."
-	@/bin/rm -f $(NAME)
+	@echo "Removing $(LIB_NAME)"
+	@/bin/rm -f $(LIB_NAME)
 
 re: fclean all
+
+lib: $(LIB_NAME)
+
+$(LIB_NAME):
+	@echo "Compiling $(LIB_NAME) object files"
+	@$(CC) $(FLAGS) -c $(LIB_CFILES) -I $(INCLUDES)
+	@echo "Linking $(LIB_NAME) object files"
+	@ar rc $(LIB_NAME) $(LIB_OFILES)
+	@ranlib $(LIB_NAME)
+
+lib_clean:
+	@echo "Removing $(LIB_NAME) object files"
+	@/bin/rm -f $(LIB_OFILES)
+
+lib_fclean: lib_clean
+	@echo "Removing $(LIB_NAME)..."
+	@/bin/rm -f $(LIB_NAME)
+
+lib_re: lib_fclean $(LIB_NAME)
+
+relib: lib_re
+
+printf: lib
+	@echo "Compiling printf object files"
+	@$(CC) $(FLAGS) -I $(INCLUDES) -c $(PF_CFILES)
+	@echo "Linking printf object files with $(LIB_NAME)"
+	@ar rc $(LIB_NAME) $(PF_OFILES)
+
+pf_clean:
+	@echo "Removing $(PF_NAME) object files"
+	@/bin/rm -f $(PF_OFILES)
+
+pf_fclean: pf_clean
+	@echo "Removing $(PF_NAME)"
+	@/bin/rm -f $(PF_NAME)
+
+pf_re: pf_fclean printf
