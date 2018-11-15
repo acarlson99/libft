@@ -12,7 +12,7 @@
 
 #include <ft_printf.h>
 
-static int		pf_print_int_meat(t_info info, size_t n, char *str, int is_neg)
+static int		pf_print_int_meat(t__pf_info info, size_t n, char *str, int is_neg)
 {
 	int count;
 
@@ -27,7 +27,7 @@ static int		pf_print_int_meat(t_info info, size_t n, char *str, int is_neg)
 	return (count);
 }
 
-int				pf_print_int(t_info info, va_list args_list)
+int				pf_print_int(t__pf_info info, va_list args_list)
 {
 	int			count;
 	int			is_neg;

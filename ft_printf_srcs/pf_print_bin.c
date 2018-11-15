@@ -12,7 +12,7 @@
 
 #include <ft_printf.h>
 
-static int			pf_print_bin_meat(t_info info, char *str, int n)
+static int			pf_print_bin_meat(t__pf_info info, char *str, int n)
 {
 	int		count;
 
@@ -35,7 +35,7 @@ static int			pf_print_bin_meat(t_info info, char *str, int n)
 	return (count);
 }
 
-int					pf_print_bin(t_info info, va_list args_list)
+int					pf_print_bin(t__pf_info info, va_list args_list)
 {
 	char	*str;
 	int		count;

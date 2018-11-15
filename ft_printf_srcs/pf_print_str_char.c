@@ -12,7 +12,7 @@
 
 #include <ft_printf.h>
 
-int					pf_print_wide_char(t_info info, wchar_t wc)
+int					pf_print_wide_char(t__pf_info info, wchar_t wc)
 {
 	int		count;
 	int		padding;
@@ -29,7 +29,7 @@ int					pf_print_wide_char(t_info info, wchar_t wc)
 	return (count);
 }
 
-int					pf_print_skinny_char(t_info info, int c)
+int					pf_print_skinny_char(t__pf_info info, int c)
 {
 	int		count;
 	int		padding;
@@ -46,7 +46,7 @@ int					pf_print_skinny_char(t_info info, int c)
 	return (count);
 }
 
-int					pf_print_char(t_info info, va_list args_list)
+int					pf_print_char(t__pf_info info, va_list args_list)
 {
 	if (IS_LONG(info.mod) || ft_isin('C', info.str))
 		return (pf_print_wide_char(info, va_arg(args_list, wchar_t)));
@@ -54,7 +54,7 @@ int					pf_print_char(t_info info, va_list args_list)
 		return (pf_print_skinny_char(info, va_arg(args_list, int)));
 }
 
-int					pf_print_wchar_str(t_info info, va_list args_list)
+int					pf_print_wchar_str(t__pf_info info, va_list args_list)
 {
 	wchar_t	*str;
 	int		count;
@@ -80,7 +80,7 @@ int					pf_print_wchar_str(t_info info, va_list args_list)
 	return (count);
 }
 
-int					pf_print_string(t_info info, va_list args_list)
+int					pf_print_string(t__pf_info info, va_list args_list)
 {
 	char	*str;
 	int		count;

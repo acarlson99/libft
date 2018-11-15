@@ -12,7 +12,7 @@
 
 #include <ft_printf.h>
 
-int					pf_print_unsigned(t_info info, va_list args_list)
+int					pf_print_unsigned(t__pf_info info, va_list args_list)
 {
 	int			count;
 	char		*str;

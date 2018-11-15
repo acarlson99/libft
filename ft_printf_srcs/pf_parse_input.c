@@ -42,7 +42,7 @@ int					pf_get_min_field(char *str)
 	return (n ? n : ft_atoi(str));
 }
 
-int					pf_get_precision(t_info info)
+int					pf_get_precision(t__pf_info info)
 {
 	size_t		n;
 

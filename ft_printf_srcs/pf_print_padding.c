@@ -16,7 +16,7 @@
 ** Weird signed vs unsigned errors for p x
 */
 
-size_t				pf_extract_va_arg_signed(t_info info, va_list args_list)
+size_t				pf_extract_va_arg_signed(t__pf_info info, va_list args_list)
 {
 	if (IS_CHAR(info.mod))
 		return ((char)va_arg(args_list, int));
@@ -34,7 +34,7 @@ size_t				pf_extract_va_arg_signed(t_info info, va_list args_list)
 		return ((int)va_arg(args_list, int));
 }
 
-size_t				pf_extract_va_arg_unsigned(t_info info, va_list args_list)
+size_t				pf_extract_va_arg_unsigned(t__pf_info info, va_list args_list)
 {
 	if (IS_CHAR(info.mod))
 		return (va_arg(args_list, unsigned int) & FT_UCHAR_MAX);
@@ -56,7 +56,7 @@ size_t				pf_extract_va_arg_unsigned(t_info info, va_list args_list)
 ** Prints spaces/zeroes
 */
 
-int					pf_print_min_field_width(t_info info, int is_neg)
+int					pf_print_min_field_width(t__pf_info info, int is_neg)
 {
 	int		count;
 	int		padding;
@@ -75,7 +75,7 @@ int					pf_print_min_field_width(t_info info, int is_neg)
 ** Prints necessary zeroes
 */
 
-int					pf_print_zeroes(t_info info)
+int					pf_print_zeroes(t__pf_info info)
 {
 	int		count;
 	int		n;
@@ -91,7 +91,7 @@ int					pf_print_zeroes(t_info info)
 ** Prints zeroes and sign for precision
 */
 
-int					pf_print_int_precision(t_info info, char *str, int is_neg)
+int					pf_print_int_precision(t__pf_info info, char *str, int is_neg)
 {
 	int count;
 

@@ -34,7 +34,7 @@ static const t_fun_ptr g_get_function[] =
 
 int		pf_dispatch_func(const char *fmt, int *count, va_list args_list)
 {
-	t_info	info;
+	t__pf_info	info;
 	int		n;
 	char	c;
 
