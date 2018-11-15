@@ -6,13 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:27:00 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 13:27:01 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 14:27:41 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-static int			pf_print_bin_meat(t__pf_info info, char *str, int n)
+static int			pf_print_bin_meat(t_pf_info info, char *str, int n)
 {
 	int		count;
 
@@ -35,7 +35,7 @@ static int			pf_print_bin_meat(t__pf_info info, char *str, int n)
 	return (count);
 }
 
-int					pf_print_bin(t__pf_info info, va_list args_list)
+int					pf_print_bin(t_pf_info info, va_list args_list)
 {
 	char	*str;
 	int		count;

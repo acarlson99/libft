@@ -6,13 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:27:10 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 13:28:19 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 14:25:13 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-static int		pf_print_int_meat(t__pf_info info, size_t n, char *str, int is_neg)
+static int	pf_print_int_meat(t_pf_info info, size_t n, char *str, int is_neg)
 {
 	int count;
 
@@ -27,7 +27,7 @@ static int		pf_print_int_meat(t__pf_info info, size_t n, char *str, int is_neg)
 	return (count);
 }
 
-int				pf_print_int(t__pf_info info, va_list args_list)
+int			pf_print_int(t_pf_info info, va_list args_list)
 {
 	int			count;
 	int			is_neg;

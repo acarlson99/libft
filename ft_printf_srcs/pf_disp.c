@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:24:52 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 13:24:54 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 14:24:36 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ static const t_fun_ptr g_get_function[] =
 
 int		pf_dispatch_func(const char *fmt, int *count, va_list args_list)
 {
-	t__pf_info	info;
-	int		n;
-	char	c;
+	t_pf_info	info;
+	int			n;
+	char		c;
 
 	n = ft_strcspn(fmt, CONVERSIONS);
 	c = fmt[n];

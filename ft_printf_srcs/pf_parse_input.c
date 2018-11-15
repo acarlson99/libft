@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:26:56 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 13:26:56 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 14:28:13 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int					pf_get_min_field(char *str)
 	return (n ? n : ft_atoi(str));
 }
 
-int					pf_get_precision(t__pf_info info)
+int					pf_get_precision(t_pf_info info)
 {
 	size_t		n;
 

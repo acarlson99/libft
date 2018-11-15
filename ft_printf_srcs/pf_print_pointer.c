@@ -6,13 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:27:29 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 13:27:30 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 14:28:12 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-int					pf_print_pointer(t__pf_info info, va_list args_list)
+int					pf_print_pointer(t_pf_info info, va_list args_list)
 {
 	int			count;
 	char		*str;

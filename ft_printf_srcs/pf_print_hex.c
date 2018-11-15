@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:27:05 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 13:27:06 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 14:25:34 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** If X print capital letters rather than lowecase
 */
 
-static int			pf_print_hex_meat(t__pf_info info, char *str, int n, int is_cap)
+static int		pf_print_hex_meat(t_pf_info info, char *str, int n, int is_cap)
 {
 	int		count;
 
@@ -39,7 +39,7 @@ static int			pf_print_hex_meat(t__pf_info info, char *str, int n, int is_cap)
 	return (count);
 }
 
-int					pf_print_hex(t__pf_info info, va_list args_list)
+int				pf_print_hex(t_pf_info info, va_list args_list)
 {
 	char	*str;
 	char	*ptr;
