@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_str_char.c                                   :+:      :+:    :+:   */
+/*   pf_print_str_char.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 15:15:27 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/14 15:28:37 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:27:34 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:27:35 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-int					print_wide_char(t_info info, wchar_t wc)
+int					pf_print_wide_char(t_info info, wchar_t wc)
 {
 	int		count;
 	int		padding;
@@ -29,7 +29,7 @@ int					print_wide_char(t_info info, wchar_t wc)
 	return (count);
 }
 
-int					print_skinny_char(t_info info, int c)
+int					pf_print_skinny_char(t_info info, int c)
 {
 	int		count;
 	int		padding;
@@ -46,15 +46,15 @@ int					print_skinny_char(t_info info, int c)
 	return (count);
 }
 
-int					print_char(t_info info, va_list args_list)
+int					pf_print_char(t_info info, va_list args_list)
 {
 	if (IS_LONG(info.mod) || ft_isin('C', info.str))
-		return (print_wide_char(info, va_arg(args_list, wchar_t)));
+		return (pf_print_wide_char(info, va_arg(args_list, wchar_t)));
 	else
-		return (print_skinny_char(info, va_arg(args_list, int)));
+		return (pf_print_skinny_char(info, va_arg(args_list, int)));
 }
 
-int					print_wchar_str(t_info info, va_list args_list)
+int					pf_print_wchar_str(t_info info, va_list args_list)
 {
 	wchar_t	*str;
 	int		count;
@@ -80,14 +80,14 @@ int					print_wchar_str(t_info info, va_list args_list)
 	return (count);
 }
 
-int					print_string(t_info info, va_list args_list)
+int					pf_print_string(t_info info, va_list args_list)
 {
 	char	*str;
 	int		count;
 	size_t	padding;
 
 	if (IS_LONG(info.mod) || ft_isin('S', info.str))
-		return (print_wchar_str(info, args_list));
+		return (pf_print_wchar_str(info, args_list));
 	str = va_arg(args_list, char *);
 	if (str == NULL)
 		str = "(null)";

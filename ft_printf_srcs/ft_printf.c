@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/05 15:18:32 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/14 14:37:37 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:24:40 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:24:45 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ int		ft_vdprintf(int fd, const char *format, va_list args_list)
 	while (format[i])
 	{
 		if (format[i] == '%')
-			i += dispatch_func(&(format[i + 1]), &count, args_list);
+			i += pf_dispatch_func(&(format[i + 1]), &count, args_list);
 		else if (format[i] == '{')
-			i += find_colors(&(format[i + 1]));
+			i += pf_find_colors(&(format[i + 1]));
 		else
 			count += ft_putchar_fd_2(format[i], fd);
 		i++;

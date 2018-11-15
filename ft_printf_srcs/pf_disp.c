@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   disp.c                                             :+:      :+:    :+:   */
+/*   pf_disp.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/06 13:03:45 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/14 14:58:38 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:24:52 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:24:54 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,25 @@
 
 static const t_fun_ptr g_get_function[] =
 {
-	['s'] = print_string,
-	['S'] = print_string,
-	['p'] = print_pointer,
-	['d'] = print_int,
-	['D'] = print_int,
-	['i'] = print_int,
-	['o'] = print_oct,
-	['O'] = print_oct,
-	['u'] = print_unsigned,
-	['U'] = print_unsigned,
-	['x'] = print_hex,
-	['X'] = print_hex,
-	['c'] = print_char,
-	['C'] = print_char,
-	['b'] = print_bin,
-	['%'] = print_percent
+	['s'] = pf_print_string,
+	['S'] = pf_print_string,
+	['p'] = pf_print_pointer,
+	['d'] = pf_print_int,
+	['D'] = pf_print_int,
+	['i'] = pf_print_int,
+	['o'] = pf_print_oct,
+	['O'] = pf_print_oct,
+	['u'] = pf_print_unsigned,
+	['U'] = pf_print_unsigned,
+	['x'] = pf_print_hex,
+	['X'] = pf_print_hex,
+	['c'] = pf_print_char,
+	['C'] = pf_print_char,
+	['b'] = pf_print_bin,
+	['%'] = pf_print_percent
 };
 
-int		dispatch_func(const char *fmt, int *count, va_list args_list)
+int		pf_dispatch_func(const char *fmt, int *count, va_list args_list)
 {
 	t_info	info;
 	int		n;
@@ -40,13 +40,13 @@ int		dispatch_func(const char *fmt, int *count, va_list args_list)
 
 	n = ft_strcspn(fmt, CONVERSIONS);
 	c = fmt[n];
-	info.options = find_options(c, fmt);
-	info.mod = find_modifier(c, fmt, n);
+	info.options = pf_find_options(c, fmt);
+	info.mod = pf_find_modifier(c, fmt, n);
 	RET_IF(info.options == -1 || info.mod == -1, ft_strspn(fmt, RECOGNIZED));
 	info.str = ft_strndup(fmt, n + 1);
-	info.min_field_width = get_min_field(info.str);
+	info.min_field_width = pf_get_min_field(info.str);
 	info.prec_spec = ft_isin('.', info.str);
-	info.precision = info.prec_spec ? get_precision(info) : 0;
+	info.precision = info.prec_spec ? pf_get_precision(info) : 0;
 	if (info.prec_spec && c != '%')
 	{
 		info.options |= ZERO;

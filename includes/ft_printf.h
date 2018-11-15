@@ -81,33 +81,33 @@ typedef struct		s_info
 int					ft_printf(char *fmt, ...);
 int					ft_vdprintf(int fd, const char *format, va_list args_list);
 
-int					dispatch_func(const char *str,\
+int					pf_dispatch_func(const char *str,\
 									int *count, va_list args_list);
 
-int					find_colors(const char *str);
+int					pf_find_colors(const char *str);
 
-int					get_min_field(char *str);
-size_t				extract_va_arg_signed(t_info info, va_list args_list);
-size_t				extract_va_arg_unsigned(t_info info, va_list args_list);
+int					pf_get_min_field(char *str);
+size_t				pf_extract_va_arg_signed(t_info info, va_list args_list);
+size_t				pf_extract_va_arg_unsigned(t_info info, va_list args_list);
 
-int					find_modifier(char c, const char *str, int n);
-int					find_options(char c, const char *str);
-int					get_precision(t_info info);
-int					get_min_field(char *str);
+int					pf_find_modifier(char c, const char *str, int n);
+int					pf_find_options(char c, const char *str);
+int					pf_get_precision(t_info info);
+int					pf_get_min_field(char *str);
 
-int					print_min_field_width(t_info info, int is_neg);
-int					print_zeroes(t_info info);
-int					print_int_precision(t_info info, char *str, int is_neg);
+int					pf_print_min_field_width(t_info info, int is_neg);
+int					pf_print_zeroes(t_info info);
+int					pf_print_int_precision(t_info info, char *str, int is_neg);
 
-int					print_string(t_info info, va_list args_list);
-int					print_pointer(t_info info, va_list args_list);
-int					print_int(t_info info, va_list args_list);
-int					print_oct(t_info info, va_list args_list);
-int					print_unsigned(t_info info, va_list args_list);
-int					print_hex(t_info info, va_list args_list);
-int					print_char(t_info info, va_list args_list);
-int					print_bin(t_info info, va_list args_list);
-int					print_percent(t_info info, va_list args_list);
+int					pf_print_string(t_info info, va_list args_list);
+int					pf_print_pointer(t_info info, va_list args_list);
+int					pf_print_int(t_info info, va_list args_list);
+int					pf_print_oct(t_info info, va_list args_list);
+int					pf_print_unsigned(t_info info, va_list args_list);
+int					pf_print_hex(t_info info, va_list args_list);
+int					pf_print_char(t_info info, va_list args_list);
+int					pf_print_bin(t_info info, va_list args_list);
+int					pf_print_percent(t_info info, va_list args_list);
 
 typedef int			(*t_fun_ptr)();
 

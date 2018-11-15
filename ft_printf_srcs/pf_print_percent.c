@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_percent.c                                    :+:      :+:    :+:   */
+/*   pf_print_percent.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 15:19:36 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/13 15:33:48 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:27:25 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:27:25 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-int					print_percent(t_info info, va_list args_list)
+int					pf_print_percent(t_info info, va_list args_list)
 {
 	int		padding;
 	int		count;

@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_padding.c                                    :+:      :+:    :+:   */
+/*   pf_print_padding.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 15:58:59 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/13 09:28:27 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:27:20 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:27:21 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 ** Weird signed vs unsigned errors for p x
 */
 
-size_t				extract_va_arg_signed(t_info info, va_list args_list)
+size_t				pf_extract_va_arg_signed(t_info info, va_list args_list)
 {
 	if (IS_CHAR(info.mod))
 		return ((char)va_arg(args_list, int));
@@ -34,7 +34,7 @@ size_t				extract_va_arg_signed(t_info info, va_list args_list)
 		return ((int)va_arg(args_list, int));
 }
 
-size_t				extract_va_arg_unsigned(t_info info, va_list args_list)
+size_t				pf_extract_va_arg_unsigned(t_info info, va_list args_list)
 {
 	if (IS_CHAR(info.mod))
 		return (va_arg(args_list, unsigned int) & FT_UCHAR_MAX);
@@ -56,7 +56,7 @@ size_t				extract_va_arg_unsigned(t_info info, va_list args_list)
 ** Prints spaces/zeroes
 */
 
-int					print_min_field_width(t_info info, int is_neg)
+int					pf_print_min_field_width(t_info info, int is_neg)
 {
 	int		count;
 	int		padding;
@@ -75,7 +75,7 @@ int					print_min_field_width(t_info info, int is_neg)
 ** Prints necessary zeroes
 */
 
-int					print_zeroes(t_info info)
+int					pf_print_zeroes(t_info info)
 {
 	int		count;
 	int		n;
@@ -91,7 +91,7 @@ int					print_zeroes(t_info info)
 ** Prints zeroes and sign for precision
 */
 
-int					print_int_precision(t_info info, char *str, int is_neg)
+int					pf_print_int_precision(t_info info, char *str, int is_neg)
 {
 	int count;
 
@@ -101,7 +101,7 @@ int					print_int_precision(t_info info, char *str, int is_neg)
 	else
 		count += is_neg && !(IS_ZERO(info.options))\
 			&& ft_putchar_fd_2('-', g_printf_fd);
-	count += print_zeroes(info);
+	count += pf_print_zeroes(info);
 	count += ft_putstr_fd_2(str + is_neg, g_printf_fd);
 	return (count);
 }

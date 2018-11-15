@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   find_colors.c                                      :+:      :+:    :+:   */
+/*   pf_find_colors.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 14:28:09 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/14 15:02:48 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:26:41 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:26:46 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-int			find_colors(const char *s)
+int			pf_find_colors(const char *s)
 {
 	char	*str;
 	size_t	len;

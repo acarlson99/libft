@@ -1,54 +1,57 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_bin.c                                        :+:      :+:    :+:   */
+/*   pf_print_oct.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/14 14:05:29 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/14 15:00:13 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:27:15 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:27:15 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <ft_printf.h>
 
-static int			print_bin_meat(t_info info, char *str, int n)
+static int			pf_print_oct_meat(t_info info, char *str, int n)
 {
-	int		count;
+	int count;
 
 	count = 0;
-	if (IS_ALT(info.options) && n != 0)
-		MFW -= 2;
 	if ((IS_NEG_FIELD(info.options) || IS_ZERO(info.options))\
-		&& IS_ALT(info.options) && n != 0)
-		count += ft_putstr_fd_2("0b", g_printf_fd);
+		&& IS_ALT(info.options) && n != 0 && info.len >= PREC)
+		count += ft_putstr_fd_2("0", g_printf_fd);
 	if (IS_NEG_FIELD(info.options))
 		if (!(info.prec_spec) || PREC != 0 || n != 0)
-			count += print_int_precision(info, str, 0);
-	count += print_min_field_width(info, 0);
+			count += pf_print_int_precision(info, str, 0);
+	count += pf_print_min_field_width(info, 0);
 	if ((!(IS_NEG_FIELD(info.options) || IS_ZERO(info.options)))\
-		&& IS_ALT(info.options) && n != 0)
-		count += ft_putstr_fd_2("0b", g_printf_fd);
+		&& IS_ALT(info.options) && n != 0 && info.len >= PREC)
+		count += ft_putstr_fd_2("0", g_printf_fd);
 	if (!(IS_NEG_FIELD(info.options)))
-		if (!(info.prec_spec) || PREC != 0 || n != 0)
-			count += print_int_precision(info, str, 0);
+		if (!(info.prec_spec) || PREC != 0 || n != 0 || (IS_ALT(info.options)\
+														&& n == 0))
+			count += pf_print_int_precision(info, str, 0);
 	return (count);
 }
 
-int					print_bin(t_info info, va_list args_list)
+int					pf_print_oct(t_info info, va_list args_list)
 {
 	char	*str;
 	int		count;
 	size_t	n;
 
-	n = extract_va_arg_unsigned(info, args_list);
-	str = ft_size_ttoabase(n, 2);
+	if (ft_isin('O', info.str))
+		info.mod = PRINTF_LONG;
+	n = pf_extract_va_arg_unsigned(info, args_list);
+	str = ft_size_ttoabase(n, 8);
 	count = 0;
 	if (info.prec_spec && PREC == 0 && n == 0)
 		info.len = 0;
 	else
-		info.len = ft_unumlen(n, 2);
-	count += print_bin_meat(info, str, n);
+		info.len = ft_unumlen(n, 8);
+	if (IS_ALT(info.options) && n != 0 && info.len >= PREC)
+		MFW--;
+	count += pf_print_oct_meat(info, str, n);
 	free(str);
 	return (count);
 }

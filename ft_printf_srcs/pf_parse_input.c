@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_input.c                                      :+:      :+:    :+:   */
+/*   pf_parse_input.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/11 15:59:09 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/14 14:59:00 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 13:26:56 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 13:26:56 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 ** It then checks the rest of the string for another precision
 */
 
-int					get_min_field(char *str)
+int					pf_get_min_field(char *str)
 {
 	int		n;
 	char	*s2;
@@ -33,16 +33,16 @@ int					get_min_field(char *str)
 	str = &(str[ft_strcspn(str, "0123456789")]);
 	RET_IF(s2 < str, 0);
 	if (*str == '0')
-		return (get_min_field(str + 1));
+		return (pf_get_min_field(str + 1));
 	n = ft_strspn(str, "0123456789");
 	s2 = &(str[n]);
 	RET_IF(s2[0] == '.', ft_atoi(str));
 	RET_IF(str[n] == '\0', 0);
-	n = get_min_field(&(str[n + 1]));
+	n = pf_get_min_field(&(str[n + 1]));
 	return (n ? n : ft_atoi(str));
 }
 
-int					get_precision(t_info info)
+int					pf_get_precision(t_info info)
 {
 	size_t		n;
 
@@ -51,7 +51,7 @@ int					get_precision(t_info info)
 	return (ft_atoi(&(info.str[n + 1])));
 }
 
-int					add_mod(char c, const char *str, int n, int mod)
+static int			add_mod(char c, const char *str, int n, int mod)
 {
 	(void)c;
 	if (str[n] == 'l')
@@ -80,7 +80,7 @@ int					add_mod(char c, const char *str, int n, int mod)
 	return (-1);
 }
 
-int					find_modifier(char c, const char *str, int n)
+int					pf_find_modifier(char c, const char *str, int n)
 {
 	int		mod;
 

@@ -43,9 +43,9 @@ LIB_OFILES = $(addsuffix .o, $(LIB_FILES))
 LIB_NAME = libft.a
 
 PF_SRCS = ft_printf_srcs/
-PF_FILES = ft_printf disp print_str_char print_int print_unsigned print_oct\
-		print_hex print_pointer print_percent print_padding parse_input\
-		find_options print_bin find_colors
+PF_FILES = ft_printf pf_disp pf_print_str_char pf_print_int pf_print_unsigned pf_print_oct\
+		pf_print_hex pf_print_pointer pf_print_percent pf_print_padding pf_parse_input\
+		pf_find_options pf_print_bin pf_find_colors
 PF_CFILES = $(addprefix $(PF_SRCS), $(addsuffix .c, $(PF_FILES)))
 PF_OFILES = $(addsuffix .o, $(PF_FILES))
 
