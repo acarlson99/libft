@@ -1,26 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memrealloc.c                                    :+:      :+:    :+:   */
+/*   ft_strrealloc.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/10/20 16:15:18 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 20:04:07 by acarlson         ###   ########.fr       */
+/*   Created: 2018/11/15 20:12:44 by acarlson          #+#    #+#             */
+/*   Updated: 2018/11/15 20:18:55 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Reallocates memory to "size" size and copies mem from ptr to new
-** if ptr is NULL realloc is identical to malloc
-** if size < size of ptr, copy as much as you can
-*/
-
-void		*ft_memrealloc(void *ptr, size_t size)
+char		*ft_strrealloc(char *str, size_t len)
 {
-	if (!(ptr))
-		return (ft_memalloc(size));
-	return (ft_memcpy(ft_memalloc(size), ptr, size));
+	char	*tmp;
+
+	NULL_CHECK(!(tmp = ft_strnew(len)));
+	tmp = ft_strcat(tmp, str);
+	str = tmp;
+	free(tmp);
+	return (str);
 }
