@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 20:17:14 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 21:28:01 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@
 # define MIN(a, b) (a < b) ? a : b
 # define MAX(a, b) (a > b) ? a : b
 # define ABS(x) (x < 0) ? -x : x
+# define CEIL(a) (((a - (int)(a)) > 0) ? (typeof(a))(size_t)(a + 1) : a)
+# define FLOOR(a) (((a - (int)(a)) > 0) ? (typeof(a))(size_t)(a - 1) : a)
 
 # define ABS_I(x) (x ^ (x >> 31)) - (x >> 31)
 # define MAX_I(a, b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
