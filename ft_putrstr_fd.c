@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 16:36:05 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 16:36:08 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/15 20:25:44 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int			ft_putrstr_fd(char *s, int fd)
 {
 	int i;
 	int j;
-	
+
 	i = ft_strlen(s);
 	j = i;
 	while (i >= 0)
