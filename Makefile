@@ -6,7 +6,7 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 14:45:59 by acarlson          #+#    #+#              #
-#    Updated: 2018/11/15 20:30:47 by acarlson         ###   ########.fr        #
+#    Updated: 2018/11/16 16:34:04 by acarlson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ OFILES = $(addprefix $(OBJDIR), $(addsuffix .o, $(FILES)))
 NAME = libft.a
 
 CL_CYAN = \033[0;36m
-CL_GREED = \033[0;32m
+CL_GREEN = \033[0;32m
 CL_RED = \033[0;31m
 CL_WHITE = \033[0m
 
@@ -59,9 +59,7 @@ all: $(NAME)
 $(NAME): $(OBJDIR) $(OFILES)
 	@ar -rcsu $@ $(OFILES)
 	@ranlib $@
-	@echo "  $(CL_WHITE)+ libft : Compiled $(CL_GREED)$@$(CL_WHITE)"
-
-# ls $(OBJDIR) | wc -w; echo "$(CL_WHITE)*.o"; \
+	@echo "  $(CL_WHITE)+ libft : Compiled $(CL_GREEN)$@$(CL_WHITE)"
 
 clean:
 	@echo " $(shell \
@@ -87,13 +85,14 @@ fclean: clean
 re: fclean all
 
 $(addprefix $(OBJDIR), %.o): %.c
-	@$(CC) $(INCLUDES) $(CFLAGS) -o $@ -c $<
+	@$(CC) $(INCLUDES) $(FLAGS) -o $@ -c $<
 
 $(OBJDIR):
-	@$(shell \
+	@echo " $(shell \
 	if [ -d $(OBJDIR) ]; \
 	then \
-		mkdir -p $(OBJDIR); \
-		echo " + libft : Created  $(CL_GREED)$(OBJDIR)$(CL_WHITE)$(CL_WHITE)"; \
-	fi)
-	@mkdir -p $(OBJDIR)
+		: ; \
+	else \
+		mkdir $(OBJDIR); \
+		echo " + libft : Created  $(CL_GREEN)$(OBJDIR)$(CL_WHITE)$(CL_WHITE)"; \
+	fi) "
