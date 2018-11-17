@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 21:28:01 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/17 14:33:02 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -306,6 +306,7 @@ int				ft_putflt_fd_2(float n, size_t precision, int fd);
 int				ft_putnbr_base_2(int n, int base);
 int				ft_putnbr_fd_2(int n, int fd);
 int				ft_putstr_fd_2(char const *s, int fd);
+int				ft_putnstr(char *s, size_t n);
 int				ft_putnstr_fd(char *s, size_t n, int fd);
 int				ft_putcstr_fd(char *s, int c, int fd);
 int				ft_putrstr_fd(char *s, int fd);
