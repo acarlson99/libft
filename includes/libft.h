@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/17 14:33:02 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/18 17:59:16 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
-# include <ft_printf.h>
+# include <stdarg.h>
 
 /*
 ** Handy macros
@@ -155,26 +155,26 @@
 ** BACKGROUND
 */
 
-# define BKG(n) BKG_ ## n
+# define BG(n) BG_ ## n
 
-# define BKG_BLK "\033[40m"
-# define BKG_RED "\033[41m"
-# define BKG_GRN "\033[42m"
-# define BKG_YLW "\033[43m"
-# define BKG_BLU "\033[44m"
-# define BKG_MGN "\033[45m"
-# define BKG_CYN "\033[46m"
-# define BKG_GRY "\033[47m"
-# define BKG_LGRY "\033[47m"
-# define BKG_DGRY "\033[100m"
-# define BKG_LRED "\033[101m"
-# define BKG_LGRN "\033[102m"
-# define BKG_LYLW "\033[103m"
-# define BKG_LBLU "\033[104m"
-# define BKG_LMGN "\033[105m"
-# define BKG_LCYN "\033[106m"
-# define BKG_WHT "\033[107m"
-# define BKG_DFT "\033[49m"
+# define BG_BLK "\033[40m"
+# define BG_RED "\033[41m"
+# define BG_GRN "\033[42m"
+# define BG_YLW "\033[43m"
+# define BG_BLU "\033[44m"
+# define BG_MGN "\033[45m"
+# define BG_CYN "\033[46m"
+# define BG_GRY "\033[47m"
+# define BG_LGRY "\033[47m"
+# define BG_DGRY "\033[100m"
+# define BG_LRED "\033[101m"
+# define BG_LGRN "\033[102m"
+# define BG_LYLW "\033[103m"
+# define BG_LBLU "\033[104m"
+# define BG_LMGN "\033[105m"
+# define BG_LCYN "\033[106m"
+# define BG_WHT "\033[107m"
+# define BG_DFT "\033[49m"
 
 # define NC "\033[0m"
 
@@ -266,6 +266,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				get_next_line(const int fd, char **line);
 
 int				ft_printf(char *fmt, ...);
+int				ft_printf_fd(int fd, char *fmt, ...);
 int				ft_vdprintf(int fd, const char *format, va_list args_list);
 
 /*
@@ -324,5 +325,6 @@ char			*ft_ssize_ttoabase(ssize_t n, int base);
 int				ft_strchri(const char *s, int c);
 void			ft_lstrev(t_list **alst);
 void			ft_lstadd_tail(t_list **alst, t_list *new);
+void			ft_exit(char *message, char *color, int code);
 
 #endif

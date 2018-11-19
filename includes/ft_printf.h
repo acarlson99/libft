@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:41:41 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/15 14:26:59 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/18 17:55:10 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define PF_FD g_printf_fd
 
 # include <stdarg.h>
-# include <locale.h>
 # include "libft.h"
 
 # define MFW info.min_field_width
@@ -84,7 +83,7 @@ int					ft_vdprintf(int fd, const char *format, va_list args_list);
 int					pf_dispatch_func(const char *str,\
 									int *count, va_list args_list);
 
-int					pf_find_colors(const char *str);
+int					pf_find_colors(const char *str, int *count);
 
 int					pf_get_min_field(char *str);
 size_t				pf_extract_va_arg_signed(t_pf_info info, va_list args_list);
