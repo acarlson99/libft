@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:24:40 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/18 17:56:47 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/23 14:31:12 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_printf(char *fmt, ...)
 	return (n);
 }
 
-int ft_printf_fd(int fd, char *fmt, ...)
+int		ft_dprintf(int fd, char *fmt, ...)
 {
 	va_list args;
 	int		n;

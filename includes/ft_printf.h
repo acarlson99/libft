@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/06 15:41:41 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/18 17:55:10 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/23 14:33:21 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ typedef struct		s_pf_info
 }					t_pf_info;
 
 int					ft_printf(char *fmt, ...);
+int					ft_dprintf(int fd, char *fmt, ...);
 int					ft_vdprintf(int fd, const char *format, va_list args_list);
 
 int					pf_dispatch_func(const char *str,\

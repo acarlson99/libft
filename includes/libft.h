@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/18 17:59:16 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/23 14:33:08 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -266,7 +266,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 int				get_next_line(const int fd, char **line);
 
 int				ft_printf(char *fmt, ...);
-int				ft_printf_fd(int fd, char *fmt, ...);
+int				ft_dprintf(int fd, char *fmt, ...);
 int				ft_vdprintf(int fd, const char *format, va_list args_list);
 
 /*
