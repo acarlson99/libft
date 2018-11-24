@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/23 15:41:54 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/24 14:40:51 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@
 # define NULL_CHECK(x) if (x) return (NULL)
 # define DO_IF(cond, do_me) if (cond) do_me
 # define DO_ALL(cond, ...) if (cond) __VA_ARGS__
+# define ELSE_DO(do_me) else do_me
+# define IF_ELSE(cond, a, b) DO_IF(cond, a); ELSE_DO(b)
 
 # define MIN(a, b) (a < b) ? a : b
 # define MAX(a, b) (a > b) ? a : b
