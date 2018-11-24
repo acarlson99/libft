@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/23 14:33:08 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/11/23 15:41:54 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,10 @@
 # else
 #  define FT_LONG_BIT 32
 # endif
+
+# define FT_STDIN_FILENO 0
+# define FT_STDOUT_FILENO 1
+# define FT_STDERR_FILENO 2
 
 /*
 ** Colors

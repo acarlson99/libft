@@ -6,12 +6,12 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 14:45:59 by acarlson          #+#    #+#              #
-#    Updated: 2018/11/18 17:51:48 by acarlson         ###   ########.fr        #
+#    Updated: 2018/11/24 13:47:43 by acarlson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = gcc
-FLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 OBJDIR = .obj/
 INCLUDES = -I includes/
 FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr ft_memcmp\
@@ -85,7 +85,7 @@ fclean: clean
 re: fclean all
 
 $(addprefix $(OBJDIR), %.o): %.c
-	@$(CC) $(INCLUDES) $(FLAGS) -o $@ -c $<
+	@$(CC) $(INCLUDES) $(CFLAGS) -o $@ -c $<
 
 $(OBJDIR):
 	@echo " $(shell \
