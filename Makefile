@@ -6,11 +6,11 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 14:45:59 by acarlson          #+#    #+#              #
-#    Updated: 2018/11/24 13:47:43 by acarlson         ###   ########.fr        #
+#    Updated: 2018/12/02 23:08:13 by john             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-CC = gcc
+CC = clang
 CFLAGS = -Wall -Wextra -Werror
 OBJDIR = .obj/
 INCLUDES = -I includes/
