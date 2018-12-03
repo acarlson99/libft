@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/10/27 16:03:49 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/01 17:50:23 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/02 16:52:09 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ static void			gnl_loop(int fd, char **line, char buf[BUFF_SIZE], int nl)
 	char			*tmp2;
 	size_t			len;
 
+	rret = 1;
 	while (!(nl) && rret > 0)
 	{
 		rret = read(fd, buf, BUFF_SIZE);
