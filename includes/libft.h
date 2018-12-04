@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/28 18:07:39 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/04 11:40:08 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -333,5 +333,24 @@ int				ft_strchri(const char *s, int c);
 void			ft_lstrev(t_list **alst);
 void			ft_lstadd_tail(t_list **alst, t_list *new);
 void			ft_exit(char *message, char *color, int code);
+
+/*
+** Tree functions
+*/
+
+typedef struct	s_btree
+{
+	void			*content;
+	size_t			content_size;
+	struct s_btree	*left;
+	struct s_btree	*right;
+}				t_btree;
+
+t_btree			*ft_btreenew(void const *content, size_t constent_size);
+void			ft_btreedelone(t_btree **anode, void (*del)(void *, size_t));
+void			ft_btreedel(t_btree **anode, void (*del)(void *, size_t));
+void			ft_btreeadd(t_btree **anode, t_btree *new);
+void			ft_btreeiter(t_btree *node, void (*f)(t_btree *elem));
+t_btree			*ft_btreemap(t_btree *node, t_btree *(*f)(t_btree *elem));
 
 #endif
