@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/04 11:40:08 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/04 17:12:24 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,8 +349,7 @@ typedef struct	s_btree
 t_btree			*ft_btreenew(void const *content, size_t constent_size);
 void			ft_btreedelone(t_btree **anode, void (*del)(void *, size_t));
 void			ft_btreedel(t_btree **anode, void (*del)(void *, size_t));
-void			ft_btreeadd(t_btree **anode, t_btree *new);
-void			ft_btreeiter(t_btree *node, void (*f)(t_btree *elem));
-t_btree			*ft_btreemap(t_btree *node, t_btree *(*f)(t_btree *elem));
+void			ft_btreeadd(t_btree **anode, t_btree *new,\
+							int (*cmp)(t_btree *a, t_btree *b));
 
 #endif
