@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/04 17:12:24 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/07 19:48:08 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -333,6 +333,9 @@ int				ft_strchri(const char *s, int c);
 void			ft_lstrev(t_list **alst);
 void			ft_lstadd_tail(t_list **alst, t_list *new);
 void			ft_exit(char *message, char *color, int code);
+
+uint64_t		ft_numpair(uint32_t x, uint32_t y);
+void			ft_numunpair(uint64_t p, uint32_t *x, uint32_t *y);
 
 /*
 ** Tree functions
