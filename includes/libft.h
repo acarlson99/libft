@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/16 13:02:36 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/16 14:25:28 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -336,5 +336,21 @@ void			ft_exit(char *message, char *color, int code);
 
 uint64_t		ft_numpair(uint32_t x, uint32_t y);
 void			ft_numunpair(uint64_t p, uint32_t *x, uint32_t *y);
+
+/*
+** 3D vectors
+*/
+
+typedef struct	s_vector
+{
+	double	x;
+	double	y;
+	double	z;
+}				t_vector;
+
+t_vector	*ft_vectnew(double x, double y, double z);
+t_vector	*ft_vectadd(t_vector *v, t_vector *w);
+t_vector	*ft_vectsubtract(t_vector *v, t_vector *w);
+t_vector	*ft_vectscalarmult(double n, t_vector *v);
 
 #endif
