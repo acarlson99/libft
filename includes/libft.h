@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/07 19:48:08 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/16 13:02:36 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -336,23 +336,5 @@ void			ft_exit(char *message, char *color, int code);
 
 uint64_t		ft_numpair(uint32_t x, uint32_t y);
 void			ft_numunpair(uint64_t p, uint32_t *x, uint32_t *y);
-
-/*
-** Tree functions
-*/
-
-typedef struct	s_btree
-{
-	void			*content;
-	size_t			content_size;
-	struct s_btree	*left;
-	struct s_btree	*right;
-}				t_btree;
-
-t_btree			*ft_btreenew(void const *content, size_t constent_size);
-void			ft_btreedelone(t_btree **anode, void (*del)(void *, size_t));
-void			ft_btreedel(t_btree **anode, void (*del)(void *, size_t));
-void			ft_btreeadd(t_btree **anode, t_btree *new,\
-							int (*cmp)(t_btree *a, t_btree *b));
 
 #endif
