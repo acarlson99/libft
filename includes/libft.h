@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/18 10:31:03 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/18 11:13:19 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,8 @@
 
 # define ABS_I(x) (x ^ (x >> 31)) - (x >> 31)
 # define MAX_I(a, b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
-# define MIN_I(a, b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))
+# define MIN_I(a, b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))o
+# define LETTER_POS(c) (c & 0x1f)
 
 # define ISBLANK(c) (c == ' ' || c == '\t')
 # define ISWHITE(c) (c == ' ' || c == '\n' || c == '\t')
@@ -356,7 +357,7 @@ t_vect3			*ft_vectnew(double x, double y, double z);
 t_vect3			*ft_vectadd(t_vect3 *v, t_vect3 *w);
 t_vect3			*ft_vectsubtract(t_vect3 *v, t_vect3 *w);
 t_vect3			*ft_vectscalarmult(double n, t_vect3 *v);
-t_vect3			*ft_vectmtxmult(t_vect3 *v, t_vect3 *mat);
+t_vect3			*ft_vectmtxmult(t_vect3 *v, t_mtx4 *mat);
 t_mtx4			*ft_mtxmult(t_mtx4 *m1, t_mtx4 *m2);
 
 #endif
