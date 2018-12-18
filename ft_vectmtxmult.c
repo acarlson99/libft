@@ -1,18 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vectsubtract.c                                  :+:      :+:    :+:   */
+/*   ft_vectmtxmult.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/16 14:05:31 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/18 10:27:23 by acarlson         ###   ########.fr       */
+/*   Created: 2018/12/18 10:22:10 by acarlson          #+#    #+#             */
+/*   Updated: 2018/12/18 10:26:46 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vect3	*ft_vectadd(t_vect3 *v, t_vect3 *w)
+// TODO: fuck dude implement this
+
+t_vect3	*ft_vectmtxmult(t_vect3 *v, t_mtx4 *mat)
 {
-	return (ft_vectnew(v->x - w->x, v->y - w->y, v->z - w->z));
+	(void)mat;
+	return (v);
 }

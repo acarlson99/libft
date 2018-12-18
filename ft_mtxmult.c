@@ -1,18 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_vectsubtract.c                                  :+:      :+:    :+:   */
+/*   ft_mtxmult.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/16 14:05:31 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/18 10:27:23 by acarlson         ###   ########.fr       */
+/*   Created: 2018/12/18 10:23:40 by acarlson          #+#    #+#             */
+/*   Updated: 2018/12/18 10:26:03 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vect3	*ft_vectadd(t_vect3 *v, t_vect3 *w)
+/*
+** NOTE: bruh order matters when multiplying matrices
+*/
+
+// TODO: implement this, you dumb fuck
+
+t_mtx4		*ft_mtxmult(t_mtx4 *m1, t_mtx4 *m2)
 {
-	return (ft_vectnew(v->x - w->x, v->y - w->y, v->z - w->z));
+	(void)m2;
+	return (m1);
 }

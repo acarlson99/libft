@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/16 14:25:28 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/18 10:31:03 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -341,16 +341,22 @@ void			ft_numunpair(uint64_t p, uint32_t *x, uint32_t *y);
 ** 3D vectors
 */
 
-typedef struct	s_vector
+typedef struct	s_vect3
 {
 	double	x;
 	double	y;
 	double	z;
-}				t_vector;
+}				t_vect3;
 
-t_vector	*ft_vectnew(double x, double y, double z);
-t_vector	*ft_vectadd(t_vector *v, t_vector *w);
-t_vector	*ft_vectsubtract(t_vector *v, t_vector *w);
-t_vector	*ft_vectscalarmult(double n, t_vector *v);
+typedef struct s_mtx4
+{
+}				t_mtx4;
+
+t_vect3			*ft_vectnew(double x, double y, double z);
+t_vect3			*ft_vectadd(t_vect3 *v, t_vect3 *w);
+t_vect3			*ft_vectsubtract(t_vect3 *v, t_vect3 *w);
+t_vect3			*ft_vectscalarmult(double n, t_vect3 *v);
+t_vect3			*ft_vectmtxmult(t_vect3 *v, t_vect3 *mat);
+t_mtx4			*ft_mtxmult(t_mtx4 *m1, t_mtx4 *m2);
 
 #endif
