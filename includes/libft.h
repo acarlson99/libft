@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/18 11:13:19 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/18 14:22:30 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,15 +349,12 @@ typedef struct	s_vect3
 	double	z;
 }				t_vect3;
 
-typedef struct s_mtx4
-{
-}				t_mtx4;
+typedef double t_mtx4[4][4];
 
 t_vect3			*ft_vectnew(double x, double y, double z);
 t_vect3			*ft_vectadd(t_vect3 *v, t_vect3 *w);
 t_vect3			*ft_vectsubtract(t_vect3 *v, t_vect3 *w);
 t_vect3			*ft_vectscalarmult(double n, t_vect3 *v);
-t_vect3			*ft_vectmtxmult(t_vect3 *v, t_mtx4 *mat);
-t_mtx4			*ft_mtxmult(t_mtx4 *m1, t_mtx4 *m2);
+t_vect3			*ft_vectmtxmult(t_vect3 *v, t_mtx4 mat);
 
 #endif
