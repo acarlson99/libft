@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/18 14:22:30 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/19 15:39:11 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -349,7 +349,7 @@ typedef struct	s_vect3
 	double	z;
 }				t_vect3;
 
-typedef double t_mtx4[4][4];
+typedef double	t_mtx4[4][4];
 
 t_vect3			*ft_vectnew(double x, double y, double z);
 t_vect3			*ft_vectadd(t_vect3 *v, t_vect3 *w);
