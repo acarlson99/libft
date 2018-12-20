@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/15 13:26:41 by acarlson          #+#    #+#             */
-/*   Updated: 2018/11/18 17:43:13 by acarlson         ###   ########.fr       */
+/*   Updated: 2018/12/19 16:34:28 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,9 @@ char		*g_pf_colors[] =
 	"bg_blue",
 	"bg_white",
 	"bg_black",
-	NULL
+	"underline",
+	"bold",
+	NULL,
 };
 
 char		*g_pf_codes[] =
@@ -41,6 +43,8 @@ char		*g_pf_codes[] =
 	BG_BLU,
 	BG_WHT,
 	BG_BLK,
+	TE_UND,
+	TE_BOL,
 };
 
 int			pf_find_colors(const char *s, int *count)
