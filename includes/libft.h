@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/30 22:06:22 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/01/05 16:58:46 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@
 
 # define ABS_I(x) (x ^ (x >> 31)) - (x >> 31)
 # define MAX_I(a, b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
-# define MIN_I(a, b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))o
+# define MIN_I(a, b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))
 # define LETTER_POS(c) (c & 0x1f)
 
 # define ISBLANK(c) (c == ' ' || c == '\t')
