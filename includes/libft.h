@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/01/05 16:58:46 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/01/07 21:40:41 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -337,6 +337,8 @@ void			ft_exit(char *message, char *color, int code);
 
 uint64_t		ft_numpair(uint32_t x, uint32_t y);
 void			ft_numunpair(uint64_t p, uint32_t *x, uint32_t *y);
+
+void			ft_free_str_tab(char ***tab);
 
 /*
 ** 3D vectors
