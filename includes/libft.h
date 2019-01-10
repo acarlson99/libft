@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/01/07 21:40:41 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/01/10 14:25:48 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -357,5 +357,28 @@ t_vect3			*ft_vectnew(double x, double y, double z);
 t_vect3			*ft_vectadd(t_vect3 *v, t_vect3 *w);
 t_vect3			*ft_vectsubtract(t_vect3 *v, t_vect3 *w);
 t_vect3			*ft_vectscalarmult(double n, t_vect3 *v);
+
+/*
+** Queue
+*/
+
+struct			s_qnode {
+	void			*content;
+	struct s_qnode	*next;
+};
+
+struct			s_queue {
+	struct s_qnode	*first;
+	struct s_qnode	*last;
+};
+
+typedef struct s_qnode	t_qnode;
+typedef struct s_queue	t_queue;
+
+struct s_queue	*ft_queueinit(void);
+void			ft_enqueue(struct s_queue *queue, void *content);
+void			*ft_dequeue(struct s_queue *queue);
+void			*ft_queuepeek(struct s_queue *queue);
+int				ft_queueisempty(struct s_queue *queue);
 
 #endif
