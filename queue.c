@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/10 14:15:18 by acarlson          #+#    #+#             */
-/*   Updated: 2019/01/10 14:24:28 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/02/03 18:55:44 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@ struct s_queue	*ft_queueinit(void)
 
 void			ft_enqueue(struct s_queue *queue, void *content)
 {
-	struct s_qnode		*ptr;
-	struct s_qnode		*new;
+	struct s_node		*ptr;
+	struct s_node		*new;
 
 	if (!(queue && content))
 		return ;
-	if (!(new = (struct s_qnode *)malloc(sizeof(struct s_qnode))))
+	if (!(new = (struct s_node *)malloc(sizeof(struct s_node))))
 		return ;
 	new->content = content;
 	new->next = NULL;
@@ -49,8 +49,8 @@ void			ft_enqueue(struct s_queue *queue, void *content)
 
 void			*ft_dequeue(struct s_queue *queue)
 {
-	struct s_qnode		*a;
-	struct s_qnode		*b;
+	struct s_node		*a;
+	struct s_node		*b;
 	void				*content;
 
 	if (!queue)

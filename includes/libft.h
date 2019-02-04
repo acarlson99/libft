@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/01/10 14:25:48 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/02/03 19:17:10 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -362,17 +362,17 @@ t_vect3			*ft_vectscalarmult(double n, t_vect3 *v);
 ** Queue
 */
 
-struct			s_qnode {
+struct			s_node {
 	void			*content;
-	struct s_qnode	*next;
+	struct s_node	*next;
 };
 
 struct			s_queue {
-	struct s_qnode	*first;
-	struct s_qnode	*last;
+	struct s_node	*first;
+	struct s_node	*last;
 };
 
-typedef struct s_qnode	t_qnode;
+typedef struct s_node	t_node;
 typedef struct s_queue	t_queue;
 
 struct s_queue	*ft_queueinit(void);
@@ -380,5 +380,21 @@ void			ft_enqueue(struct s_queue *queue, void *content);
 void			*ft_dequeue(struct s_queue *queue);
 void			*ft_queuepeek(struct s_queue *queue);
 int				ft_queueisempty(struct s_queue *queue);
+
+/*
+** Stack
+*/
+
+struct			s_stack {
+	struct s_node	*top;
+};
+
+typedef struct s_stack	t_stack;
+
+struct s_stack	*ft_stackinit(void);
+void			*ft_pop(struct s_stack *stack);
+void			ft_push(struct s_stack *stack, void *content);
+void			*ft_stackpeek(struct s_stack *stack);
+int				ft_stackisempty(struct s_stack *stack);
 
 #endif
