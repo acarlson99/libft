@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/02/03 19:17:10 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/07/11 16:53:19 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,12 @@
 # define WHILE_DO(cond, do_me) while (cond) do_me
 # define ELSE_DO(do_me) else do_me
 # define IF_ELSE(cond, a, b) DO_IF(cond, a); ELSE_DO(b)
+
+/*
+** FOR(i = 0, i < 5, ++i, (printf("%d\n", i) && printf("AAAAA\n")));
+*/
+
+# define FOR(it, cond, inc, body) ({it; while (cond) {body; inc;}})
 
 # define MIN(a, b) (a < b) ? a : b
 # define MAX(a, b) (a > b) ? a : b
