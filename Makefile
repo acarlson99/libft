@@ -6,7 +6,7 @@
 #    By: acarlson <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/09/11 14:45:59 by acarlson          #+#    #+#              #
-#    Updated: 2019/02/03 18:53:15 by acarlson         ###   ########.fr        #
+#    Updated: 2019/07/12 13:46:16 by acarlson         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,7 @@ FILES = ft_memset ft_bzero ft_memcpy ft_memccpy ft_memmove ft_memchr ft_memcmp \
 		ft_size_ttoabase ft_ssize_ttoabase ft_wcharlen ft_putwchar_fd          \
 		ft_wstrlen ft_putwstr ft_putnwstr ft_putrstr_fd ft_strrealloc ft_exit  \
 		ft_numpair ft_numunpair ft_vectnew ft_vectadd ft_vectscalarmult        \
-		ft_vectsubtract ft_free_str_tab queue stack
+		ft_vectsubtract ft_free_str_tab queue stack options
 FILES += ft_printf pf_disp pf_print_str_char pf_print_int pf_print_unsigned    \
 		pf_print_oct pf_print_hex pf_print_pointer pf_print_percent            \
 		pf_print_padding pf_parse_input pf_find_options pf_print_bin           \
