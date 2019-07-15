@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_str_tab.c                                  :+:      :+:    :+:   */
+/*   ft_split_whitespace.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/07 21:39:36 by acarlson          #+#    #+#             */
-/*   Updated: 2019/07/15 13:21:13 by acarlson         ###   ########.fr       */
+/*   Created: 2019/07/15 13:25:20 by acarlson          #+#    #+#             */
+/*   Updated: 2019/07/15 13:29:46 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_free_str_tab(char ***tab)
+char		**ft_split_whitespace(char *s)
 {
-	int i;
+	unsigned	ii;
 
-	i = 0;
-	while ((*tab)[i] != NULL)
-	{
-		free((*tab)[i]);
-		i++;
-	}
-	free((*tab));
-	*tab = NULL;
+	if (!s)
+		return (NULL);
+	ii = 0;
+	while (s[ii])
+		if (ISWHITE(s[ii]))
+			s[ii] = ' ';
+	return (ft_strsplit(s, ' '));
 }

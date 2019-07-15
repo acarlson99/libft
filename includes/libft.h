@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/07/12 13:45:33 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/07/15 13:31:54 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -246,6 +246,7 @@ char			*ft_strsub(char const *s1, unsigned int start, size_t len);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			*ft_strtrim(char const *s);
 char			**ft_strsplit(char const *s, char c);
+char			**ft_split_whitespace(char*s);
 char			*ft_itoa(int n);
 void			ft_putchar(char c);
 void			ft_putstr(char const *s);
@@ -404,4 +405,15 @@ void			ft_push(struct s_stack *stack, void *content);
 void			*ft_stackpeek(struct s_stack *stack);
 int				ft_stackisempty(struct s_stack *stack);
 
+/*
+** Hash
+*/
+
+size_t			ft_hash(char *input);
+
 #endif
+
+/*
+** TODO:
+**		hashtable
+*/

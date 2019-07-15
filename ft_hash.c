@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_str_tab.c                                  :+:      :+:    :+:   */
+/*   ft_hash.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/01/07 21:39:36 by acarlson          #+#    #+#             */
-/*   Updated: 2019/07/15 13:21:13 by acarlson         ###   ########.fr       */
+/*   Created: 2019/07/15 13:22:04 by acarlson          #+#    #+#             */
+/*   Updated: 2019/07/15 13:24:34 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void		ft_free_str_tab(char ***tab)
-{
-	int i;
+#define FVN_OFFSET_BASIS 0xcbf29ce484222325
+#define FVN_PRIME 0x100000001b3
 
-	i = 0;
-	while ((*tab)[i] != NULL)
+size_t		ft_hash(char *input)
+{
+	size_t	hash;
+	size_t	ii;
+
+	ii = 0;
+	hash = FVN_OFFSET_BASIS;
+	while (input[ii])
 	{
-		free((*tab)[i]);
-		i++;
+		hash = hash * FVN_PRIME;
+		hash = hash ^ input[ii];
+		++ii;
 	}
-	free((*tab));
-	*tab = NULL;
+	return (hash);
 }
