@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 13:25:20 by acarlson          #+#    #+#             */
-/*   Updated: 2019/07/15 13:29:46 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/07/15 13:40:14 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ char		**ft_split_whitespace(char *s)
 
 	if (!s)
 		return (NULL);
-	ii = 0;
-	while (s[ii])
+	ii = -1;
+	while (s[++ii])
 		if (ISWHITE(s[ii]))
 			s[ii] = ' ';
 	return (ft_strsplit(s, ' '));
