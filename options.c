@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 13:44:34 by acarlson          #+#    #+#             */
-/*   Updated: 2019/07/12 13:45:19 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/08/02 15:54:15 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,7 @@ static int	opt_getchars(char *s)
 			}
 			++ii;
 		}
-		if (opt <= 0)
-			ft_printf("Invalid option: -%c\n", s[si]);
+		DO_IF(opt <= 0 && ft_printf("Invalid option: -%c\n", s[si]), exit(1));
 		allopts |= opt;
 	}
 	return (allopts);
