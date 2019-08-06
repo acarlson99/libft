@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/07/15 13:31:54 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/08/06 08:11:09 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,21 @@
 
 # define FOR(it, cond, inc, body) ({it; while (cond) {body; inc;}})
 
-# define MIN(a, b) (a < b) ? a : b
-# define MAX(a, b) (a > b) ? a : b
-# define ABS(x) (x < 0) ? -x : x
+# ifndef MIN
+#  define MIN(a, b) ({typeof(a) A = (a); typeof(b) B = (b); A < B ? A : B;})
+# endif
+# ifndef MAX
+#  define MAX(a, b) ({typeof(a) A = (a); typeof(b) B = (b); A > B ? A : B;})
+# endif
+
+# define ABS(x) ({typeof(x) _x = x; (_x < 0) ? -_x : _x;})
 # define CEIL(a) (((a - (int)(a)) > 0) ? (typeof(a))(size_t)(a + 1) : a)
 # define FLOOR(a) (((a - (int)(a)) > 0) ? (typeof(a))(size_t)(a - 1) : a)
 
-# define ABS_I(x) (x ^ (x >> 31)) - (x >> 31)
 # define MAX_I(a, b) (b & ((a-b) >> 31) | a & (~(a-b) >> 31))
 # define MIN_I(a, b) (a & ((a-b) >> 31) | b & (~(a-b) >> 31))
+# define ABS_I(x) (x ^ (x >> 31)) - (x >> 31)
+
 # define LETTER_POS(c) (c & 0x1f)
 
 # define ISBLANK(c) (c == ' ' || c == '\t')
