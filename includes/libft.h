@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/08/07 14:04:27 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/08/07 15:11:12 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,14 @@
 */
 
 # define FOR(it, cond, inc, body) ({it; while (cond) {body; inc;}})
+# define MIN__(a, b) ({typeof(a) A = (a); typeof(b) B = (b); A < B ? A : B;})
+# define MAX__(a, b) ({typeof(a) A = (a); typeof(b) B = (b); A > B ? A : B;})
 
 # ifndef MIN
-#  define MIN(a, b) ({typeof(a) A = (a); typeof(b) B = (b); A < B ? A : B;})
+#  define MIN(a, b) (a < b ? a : b)
 # endif
 # ifndef MAX
-#  define MAX(a, b) ({typeof(a) A = (a); typeof(b) B = (b); A > B ? A : B;})
+#  define MAX(a, b) (a > b ? a : b)
 # endif
 
 # define ABS(x) ({typeof(x) _x = x; (_x < 0) ? -_x : _x;})
@@ -415,7 +417,11 @@ int				ft_stackisempty(struct s_stack *stack);
 ** Hash
 */
 
+# define FVN_OFFSET_BASIS 0xcbf29ce484222325
+# define FVN_PRIME 0x100000001b3
+
 size_t			ft_hash(char *input);
+size_t			ft_hashn(char *input, size_t size);
 
 #endif
 
