@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/08/06 08:11:09 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/08/07 14:04:27 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -367,10 +367,10 @@ typedef struct	s_vect3
 
 typedef double	t_mtx4[4][4];
 
-t_vect3			*ft_vectnew(double x, double y, double z);
-t_vect3			*ft_vectadd(t_vect3 *v, t_vect3 *w);
-t_vect3			*ft_vectsubtract(t_vect3 *v, t_vect3 *w);
-t_vect3			*ft_vectscalarmult(double n, t_vect3 *v);
+t_vect3			ft_vectnew(double x, double y, double z);
+t_vect3			ft_vectadd(t_vect3 v, t_vect3 w);
+t_vect3			ft_vectsubtract(t_vect3 v, t_vect3 w);
+t_vect3			ft_vectscalarmult(double n, t_vect3 v);
 
 /*
 ** Queue

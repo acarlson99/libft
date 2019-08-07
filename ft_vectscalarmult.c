@@ -6,13 +6,13 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 13:34:55 by acarlson          #+#    #+#             */
-/*   Updated: 2018/12/18 10:27:16 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/08/07 13:43:22 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-t_vect3	*ft_vectscalarmult(double n, t_vect3 *v)
+t_vect3	ft_vectscalarmult(double n, t_vect3 v)
 {
-	return (ft_vectnew(v->x * n, v->y * n, v->z * n));
+	return (ft_vectnew(v.x * n, v.y * n, v.z * n));
 }
