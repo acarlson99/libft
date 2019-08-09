@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 13:45:18 by acarlson          #+#    #+#             */
-/*   Updated: 2019/07/11 14:03:29 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/08/08 13:28:51 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,10 +29,8 @@ struct	s_option {
 ** opt_printusage - prints usage given argv, containing the executable name
 */
 
-extern struct s_option *g_opts[];
-
-int		opt_getopts(int argc, char **argv, int *ii);
-int		opt_getoptcode(char c, char *s);
-void	opt_printusage(char **argv);
+int		opt_getopts(struct s_option **optab, int argc, char **argv, int *ii);
+int		opt_getoptcode(struct s_option **optab, char c, char *s);
+void	opt_printusage(struct s_option **optab, char **argv);
 
 #endif

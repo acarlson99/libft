@@ -6,28 +6,28 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/11 13:44:34 by acarlson          #+#    #+#             */
-/*   Updated: 2019/08/02 15:54:15 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/08/08 13:32:37 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	opt_getstr(char *s)
+static int	opt_getstr(struct s_option **optab, char *s)
 {
 	unsigned ii;
 
 	ii = 0;
-	while (g_opts[ii])
+	while (optab[ii])
 	{
-		if (g_opts[ii]->lopt && !ft_strcmp(g_opts[ii]->lopt, s))
-			return (g_opts[ii]->code);
+		if (optab[ii]->lopt && !ft_strcmp(optab[ii]->lopt, s))
+			return (optab[ii]->code);
 		++ii;
 	}
 	ft_printf("Invalid option: --%s\n", s);
 	exit(1);
 }
 
-static int	opt_getchars(char *s)
+static int	opt_getchars(struct s_option **optab, char *s)
 {
 	unsigned	si;
 	unsigned	ii;
@@ -40,11 +40,11 @@ static int	opt_getchars(char *s)
 	{
 		ii = 0;
 		opt = 0;
-		while (g_opts[ii])
+		while (optab[ii])
 		{
-			if (g_opts[ii]->sopt == s[si])
+			if (optab[ii]->sopt == s[si])
 			{
-				opt = g_opts[ii]->code;
+				opt = optab[ii]->code;
 				break ;
 			}
 			++ii;
@@ -55,7 +55,7 @@ static int	opt_getchars(char *s)
 	return (allopts);
 }
 
-int			opt_getopts(int argc, char **argv, int *ii)
+int			opt_getopts(struct s_option **optab, int argc, char **argv, int *ii)
 {
 	int allopts;
 	int opt;
@@ -68,14 +68,14 @@ int			opt_getopts(int argc, char **argv, int *ii)
 			break ;
 		else if (argv[*ii][1] == '-')
 			if (argv[*ii][2])
-				opt = opt_getstr(&argv[*ii][2]);
+				opt = opt_getstr(optab, &argv[*ii][2]);
 			else
 			{
 				*ii = *ii + 1;
 				break ;
 			}
 		else if (argv[*ii][1])
-			opt = opt_getchars(&argv[*ii][1]);
+			opt = opt_getchars(optab, &argv[*ii][1]);
 		else
 			break ;
 		allopts |= opt;
@@ -84,27 +84,27 @@ int			opt_getopts(int argc, char **argv, int *ii)
 	return (allopts);
 }
 
-int			opt_getoptcode(char c, char *s)
+int			opt_getoptcode(struct s_option **optab, char c, char *s)
 {
 	unsigned ii;
 
 	ii = -1;
-	while (g_opts[++ii])
+	while (optab[++ii])
 	{
-		if ((c && g_opts[ii]->sopt == c)
-			|| (s && !ft_strcmp(g_opts[ii]->lopt, s)))
-			return (g_opts[ii]->code);
+		if ((c && optab[ii]->sopt == c)
+			|| (s && !ft_strcmp(optab[ii]->lopt, s)))
+			return (optab[ii]->code);
 	}
 	return (-1);
 }
 
-void		opt_printusage(char **argv)
+void		opt_printusage(struct s_option **optab, char **argv)
 {
 	unsigned ii;
 
 	ii = -1;
 	ft_printf("Usage: %s [OPTIONS] files\n", argv[0]);
-	while (g_opts[++ii])
-		ft_printf("\t-%c, --%-20s\t%s\n", g_opts[ii]->sopt, g_opts[ii]->lopt,
-				g_opts[ii]->desc);
+	while (optab[++ii])
+		ft_printf("\t-%c, --%-20s\t%s\n", optab[ii]->sopt, optab[ii]->lopt,
+				optab[ii]->desc);
 }
