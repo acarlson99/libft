@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/15 13:22:04 by acarlson          #+#    #+#             */
-/*   Updated: 2019/08/07 15:00:15 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/09/05 12:50:33 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ size_t		ft_hash(char *input)
 	size_t	ii;
 
 	ii = 0;
-	hash = FVN_OFFSET_BASIS;
+	hash = FNV_OFFSET_BASIS;
 	while (input[ii])
 	{
-		hash = hash * FVN_PRIME;
+		hash = hash * FNV_PRIME;
 		hash = hash ^ input[ii];
 		++ii;
 	}

@@ -6,7 +6,7 @@
 /*   By: acarlson <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/10 16:13:51 by acarlson          #+#    #+#             */
-/*   Updated: 2019/08/07 15:11:12 by acarlson         ###   ########.fr       */
+/*   Updated: 2019/09/05 12:50:32 by acarlson         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -417,8 +417,8 @@ int				ft_stackisempty(struct s_stack *stack);
 ** Hash
 */
 
-# define FVN_OFFSET_BASIS 0xcbf29ce484222325
-# define FVN_PRIME 0x100000001b3
+# define FNV_OFFSET_BASIS 0xcbf29ce484222325
+# define FNV_PRIME 0x100000001b3
 
 size_t			ft_hash(char *input);
 size_t			ft_hashn(char *input, size_t size);
